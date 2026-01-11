@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+if [[ "${OSTYPE}" = darwin* ]]; then
+  brew install \
+    enchant \
+    font-jetbrains-mono \
+    git \
+    pkg-config
+
+  exit 0
+fi
+
+# shellcheck source=/dev/null
+source /etc/os-release
+
+if [[ "${ID}" = fedora ]]; then
+  dnf install \
+    enchant2 \
+    enchant2-devel \
+    coreutils \
+    git \
+    jetbrains-mono-fonts \
+    pkgconf-pkg-config \
+    wl-clipboard
+fi

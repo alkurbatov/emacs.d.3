@@ -1,0 +1,30 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Makefile template
+# expand-env: ((yas-indent-line 'fixed))
+# --
+SHELL := bash
+.SHELLFLAGS := -eu -o pipefail -c
+
+MAKEFLAGS = --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
+
+.DEFAULT_GOAL := help
+.PHONY: help
+help: ## Display this help screen
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-38s\033[0m %s\n", \$\$1, \$\$2}' \$(MAKEFILE_LIST)
+
+.PHONY: deps
+deps: ## Install project dependencies
+	echo "Installing project dependencies"
+
+.PHONY: lint
+lint: ## Run linters on the source code
+	echo "Running linters"
+
+.PHONY: test
+test: ## Run unit-tests
+	echo "Running tests"
+
+.PHONY: clean
+clean: ## Remove intermediate files and build artifacts
+	echo "Cleaning up"

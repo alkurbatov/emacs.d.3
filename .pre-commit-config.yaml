@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: snippets
+      - id: end-of-file-fixer
+        exclude: snippets
+      - id: mixed-line-ending
+        exclude: snippets
+
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.15.0
+    hooks:
+      - id: markdownlint
+
+  - repo: https://github.com/jamescherti/pre-commit-elisp
+    rev: v1.0.5
+    hooks:
+      - id: elisp-check-parens
+      - id: elisp-indent
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+       - id: shellcheck
