@@ -14,10 +14,22 @@
  (:features)
  (:format (format-all--buffer-easy executable "fmt" "--stdin")))
 
+;; 📦 GO-TS
+;; Tree-sitter integration for Golang.
 (use-package go-ts
   :hook
   ((go-ts-mode . eglot-ensure)
    (go-ts-mode . subword-mode)))
+
+;; 📦 GOTEST-TS
+;; Run Golang unit-tests from Emacs.
+(use-package gotest-ts
+  :straight t
+
+  :hook (go-ts-mode . gotest-ts-setup)
+
+  :bind
+  (("<f2>" . gotest-ts-run-dwim)))
 
 
 (provide 'golang)
