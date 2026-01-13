@@ -11,6 +11,10 @@
   :straight t
 
   :config
+  ;; Org-roam now requires additional package to work with sqlite DB.
+  (use-package sqlite3
+    :straight t)
+
   (org-roam-db-autosync-mode)
 
   (setopt org-roam-mode-sections

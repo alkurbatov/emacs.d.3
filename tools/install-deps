@@ -22,6 +22,7 @@ if [[ "${ID}" = fedora ]]; then
     coreutils \
     git \
     jetbrains-mono-fonts \
+    libsqlite3x-devel \
     pkgconf-pkg-config \
     wl-clipboard
 fi
