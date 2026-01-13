@@ -76,6 +76,7 @@
 (require 'snippets)
 
 (require 'elisp)
+(require 'golang)
 (require 'markdown)
 (require 'sh)
 

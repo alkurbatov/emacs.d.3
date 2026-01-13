@@ -27,6 +27,20 @@
   :hook
   (prog-mode . flymake-mode))
 
+;; 📦 FORMAT-ALL
+;; Set of utilities to format code on save.
+(use-package format-all
+  :straight t
+
+  :commands format-all-mode
+
+  :config
+  (add-to-list 'mode-line-collapse-minor-modes 'format-all-mode)
+
+  :hook
+  ((prog-mode . format-all-mode)
+   (format-all-mode . format-all-ensure-formatter)))
+
 ;; 📦 EVIL-NERD-COMMENTER
 ;; Convenient comment/uncomment action like in Vim.
 (use-package evil-nerd-commenter
