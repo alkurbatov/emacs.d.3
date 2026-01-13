@@ -26,7 +26,8 @@
   ;; Save abbrevs without questions.
   (setopt save-abbrevs 'silently)
 
-  (setopt abbrev-mode t))
+  (setopt abbrev-mode t)
+  (add-to-list 'mode-line-collapse-minor-modes 'abbrev-mode))
 
 ;; 📦 SIMPLE
 ;; Miscellaneous text editor settings.
