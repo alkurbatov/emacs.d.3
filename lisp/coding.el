@@ -49,8 +49,30 @@
   :config
   (evilnc-default-hotkeys t))
 
-;; Increase chunk size to make Eglot faster.
-(setopt read-process-output-max (* 1024 1024))
+;; 📦 EGLOT
+;; LSP integration.
+(use-package eglot
+  :config
+  ;; Automatically shutdown backend if last buffer was killed.
+  (setopt eglot-autoshutdown t)
+
+  ;; Disable connection sync, otherwise, Elgot freezes the UI for ~3s when large
+  ;; file is opened.
+  (setopt eglot-sync-connect nil)
+
+  ;; Never time out Eglot connection to make things faster.
+  (setopt eglot-connect-timeout nil)
+
+  ;; Specify explicitly to use Orderless for Eglot.
+  (setopt completion-category-overrides '((eglot (styles orderless))
+                                          (eglot-capf (styles orderless))))
+
+  ;; Increase chunk size to make Eglot faster.
+  (setopt read-process-output-max (* 1024 1024))
+
+  :bind
+  ("M-," . xref-go-back))
+
 
 ;; Install extended language grammar without questions.
 (setopt treesit-auto-install-grammar 'always)
