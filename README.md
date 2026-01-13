@@ -11,8 +11,6 @@ The third incarnation of my Emacs configuration.
 
 1. Install additional dependencies:
 
-> > :construction: Only macOS with homebrew and Fedora Linux supported:
-
    ```bash
    make deps
    ```
