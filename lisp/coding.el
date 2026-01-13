@@ -38,5 +38,8 @@
 ;; Increase chunk size to make Eglot faster.
 (setopt read-process-output-max (* 1024 1024))
 
+;; Install extended language grammar without questions.
+(setopt treesit-auto-install-grammar 'always)
+
 (provide 'coding)
 ;;; coding.el ends here
