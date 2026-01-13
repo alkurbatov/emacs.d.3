@@ -8,7 +8,8 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     font-jetbrains-mono \
     git \
     gopls \
-    pkg-config
+    pkg-config \
+    ripgrep
 
   exit 0
 fi
@@ -26,5 +27,6 @@ if [[ "${ID}" = fedora ]]; then
     jetbrains-mono-fonts \
     libsqlite3x-devel \
     pkgconf-pkg-config \
+    ripgrep \
     wl-clipboard
 fi
