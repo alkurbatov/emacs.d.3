@@ -4,7 +4,12 @@
 
 ;;; Code:
 
-(add-hook 'markdown-ts-mode-hook #'visual-line-mode)
+;; 📦 MARKDOWN-TS-MODE
+;; Tree-sitter integration for Markdown.
+(use-package markdown-ts-mode
+  :hook
+  ((markdown-ts-mode . visual-line-mode)))
+
 
 (provide 'markdown)
 ;;; markdown.el ends here
