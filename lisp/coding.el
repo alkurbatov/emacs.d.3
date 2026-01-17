@@ -35,6 +35,10 @@
   :commands format-all-mode
 
   :config
+  ;; Be silent when we can't format buffer, it could be temporal error because
+  ;; of syntax mistake.
+  (setopt format-all-show-errors 'never)
+
   (add-to-list 'mode-line-collapse-minor-modes 'format-all-mode)
 
   :hook
@@ -76,6 +80,9 @@
 
 ;; Install extended language grammar without questions.
 (setopt treesit-auto-install-grammar 'always)
+
+;; Enable tree-sitter everywhere.
+(setopt treesit-enabled-modes t)
 
 (provide 'coding)
 ;;; coding.el ends here
