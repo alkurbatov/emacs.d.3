@@ -78,6 +78,7 @@
 (require 'elisp)
 (require 'golang)
 (require 'markdown)
+(require 'protobuf)
 (require 'sh)
 
 (require 'personal-calendar)

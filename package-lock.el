@@ -30,6 +30,7 @@
  ("orderless" . "fb338f771f1693436da0472a8a4d230b28af14f3")
  ("org" . "ce83328b023e988aa8cbb8e8743db35abc24134e")
  ("org-roam" . "c72702cf27891899ea6321fe6505ff04befaf43e")
+ ("protobuf-ts-mode" . "65152f5341ea4b3417390b3e60b195975161b8bc")
  ("s.el" . "dda84d38fffdaf0c9b12837b504b402af910d01d")
  ("seq" . "da86da9bf111f68fb81efd466d76d53af5aebc00")
  ("straight.el" . "4b6289f42a4da0c1bae694ba918b43c72daf0330")
