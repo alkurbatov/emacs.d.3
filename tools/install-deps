@@ -8,6 +8,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     font-jetbrains-mono \
     git \
     gopls \
+    llvm \
     pkg-config \
     ripgrep
 
@@ -19,6 +20,7 @@ source /etc/os-release
 
 if [[ "${ID}" = fedora ]]; then
   dnf install \
+    clang \
     enchant2 \
     enchant2-devel \
     coreutils \

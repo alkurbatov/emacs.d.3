@@ -75,6 +75,7 @@
 (require 'version-control)
 (require 'snippets)
 
+(require 'cpp)
 (require 'elisp)
 (require 'golang)
 (require 'markdown)
