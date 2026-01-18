@@ -11,6 +11,10 @@ Inspired by: https://christiantietze.de/posts/2022/03/mark-local-project.el-dire
   (if-let* ((root (locate-dominating-file dir ".project")))
       (cons 'local root)))
 
+(cl-defmethod project-root ((project (head local)))
+  "Return root directory of current PROJECT."
+  (cdr project))
+
 (defun my/consult-project-ripgrep-at-point ()
   "Search text at point with consul in the current project."
   (interactive)
