@@ -8,7 +8,7 @@ STRAIGHT_VERSIONS="${EMACS_HOME}/straight/versions"
 
 mkdir -p "${STRAIGHT_VERSIONS}"
 
-for i in auto-save backups elfeed lisp snippets; do
+for i in lisp snippets; do
   rm -rf "${EMACS_HOME:?}/${i}"
 done
 
@@ -17,4 +17,8 @@ cp package-lock.el "${STRAIGHT_VERSIONS}/default.el"
 
 for i in lisp snippets; do
   cp -r "./${i}" "${EMACS_HOME}"
+done
+
+for i in auto-save backups elfeed; do
+  mkdir -p "${EMACS_HOME:?}/${i}"
 done
