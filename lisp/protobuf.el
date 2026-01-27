@@ -8,9 +8,12 @@
 (add-to-list 'treesit-language-source-alist
              '(proto "https://github.com/treywood/tree-sitter-proto"))
 
-(let ((compiled-grammar (expand-file-name "tree-sitter/libtree-sitter-proto.so" user-emacs-directory)))
-  (unless (file-exists-p compiled-grammar)
-    (treesit-install-language-grammar 'proto)))
+(unless (file-expand-wildcards
+         (expand-file-name
+          "tree-sitter/libtree-sitter-proto.*"
+          user-emacs-directory))
+  (treesit-install-language-grammar 'proto))
+
 
 ;; 📦 PROTOBUF-TS-MODE
 ;; Tree-sitter integration for Protobuf.
