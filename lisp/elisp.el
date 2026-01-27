@@ -8,7 +8,7 @@
 ;; Emacs lisp support.
 (use-package lisp
   :hook
-  ((emacs-lisp-mode) . electric-indent-local-mode))
+  (emacs-lisp-mode . electric-indent-local-mode))
 
 
 (provide 'elisp)
