@@ -48,6 +48,14 @@ XLFD: https://www.x.org/releases/X11R7.7/doc/xorg-docs/xlfd/xlfd.html"
 
   (global-ligature-mode))
 
+;; 📦 EMOJIFY
+;; Display emojis in Emacs.
+(use-package emojify
+  :straight t
+
+  :bind
+  ("C-x e" . emojify-insert-emoji))
+
 
 (add-hook 'after-init-hook #'my/setup-fonts)
 (add-to-list 'after-make-frame-functions 'my/setup-fonts)

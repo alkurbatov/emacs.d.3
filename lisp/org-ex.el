@@ -22,7 +22,8 @@
           TeX-parse-self t)
 
   :hook
-  (org-mode . visual-line-mode)
+  ((org-mode . visual-line-mode)
+   (org-mode . emojify-mode))
 
   :bind
   (:map org-mode-map
