@@ -52,6 +52,7 @@
   (setopt savehist-additional-variables
           '(bookmark-history
             command-history
+            compile-history
             custom-variable-history
             extended-command-history
             face-name-history
@@ -63,7 +64,8 @@
             read-expression-history
             regexp-search-ring
             search-ring
-            set-variable-value-history))
+            set-variable-value-history
+            shell-command-history))
 
   (add-to-list 'delete-frame-functions 'savehist-save)
 
