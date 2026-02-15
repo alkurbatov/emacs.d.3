@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Script header
+# --
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
