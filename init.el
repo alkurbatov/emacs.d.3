@@ -81,6 +81,7 @@
 (require 'golang)
 (require 'markdown)
 (require 'protobuf)
+(require 'py)
 (require 'sh)
 
 (require 'personal-calendar)

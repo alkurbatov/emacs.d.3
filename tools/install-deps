@@ -9,8 +9,12 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     git \
     gopls \
     llvm \
+    pipx \
     pkg-config \
     ripgrep
+
+  pipx install \
+       pyright
 
   exit 0
 fi
@@ -19,16 +23,26 @@ fi
 source /etc/os-release
 
 if [[ "${ID}" = fedora ]]; then
-  dnf install \
-    clang \
-    enchant2 \
-    enchant2-devel \
-    coreutils \
-    git \
-    gopls \
-    jetbrains-mono-fonts \
-    libsqlite3x-devel \
-    pkgconf-pkg-config \
-    ripgrep \
-    wl-clipboard
+  sudo dnf install \
+       clang \
+       enchant2 \
+       enchant2-devel \
+       coreutils \
+       git \
+       gopls \
+       jetbrains-mono-fonts \
+       libsqlite3x-devel \
+       pipx \
+       pkgconf-pkg-config \
+       ripgrep \
+       wl-clipboard
+
+  pipx install \
+       pyright
+
+  exit 0
 fi
+
+echo "OS is not supported!"
+
+exit 1

@@ -20,3 +20,17 @@ The third incarnation of my Emacs configuration.
    ```bash
    make install
    ```
+
+## Additional tweaks
+
+### Recommended `Pyright` setup
+
+To provide automatic activation of virtual environments create
+`pyrightconfig.json` file in the root of your project with the following content:
+
+``` json
+{
+  "venvPath": "absolute-path-to-the-folder-containing-venv",
+  "venv": "name of the venv folder, e.g. .venv"
+}
+```
