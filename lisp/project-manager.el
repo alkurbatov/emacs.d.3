@@ -4,13 +4,6 @@
 
 ;;; Code:
 
-(defun my/project-try-local (dir)
-  "Determine if DIR is a non-VC project.
-DIR must include a file .project.
-Inspired by: https://christiantietze.de/posts/2022/03/mark-local-project.el-directories/"
-  (if-let* ((root (locate-dominating-file dir ".project")))
-      (cons 'local root)))
-
 (cl-defmethod project-root ((project (head local)))
   "Return root directory of current PROJECT."
   (cdr project))
@@ -33,7 +26,8 @@ Inspired by: https://christiantietze.de/posts/2022/03/mark-local-project.el-dire
   ;; Tell consul how to identify root of a project.
   (setopt consult-project-root-function #'project-root)
 
-  (add-to-list 'project-find-functions #'my/project-try-local)
+  ;; Additional markers of a project.
+  (setopt project-vc-extra-root-markers '(".project"))
 
   :bind
   (:map project-prefix-map
