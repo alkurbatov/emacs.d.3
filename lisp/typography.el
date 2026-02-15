@@ -34,7 +34,10 @@ XLFD: https://www.x.org/releases/X11R7.7/doc/xorg-docs/xlfd/xlfd.html"
     (my/set-font my/font-family my/font-height)
 
     ;; Set scale increase step to 10%.
-    (setopt text-scale-mode-step 1.1)))
+    (setopt text-scale-mode-step 1.1)
+
+    ;; Put additional space between lines.
+    (setopt line-spacing my/line-spacing)))
 
 
 ;; 📦 LIGATURE

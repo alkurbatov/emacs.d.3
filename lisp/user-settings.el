@@ -4,8 +4,11 @@
 
 ;;; Code:
 
+;; NB (alkurbatov): The defaults are recommended values for
+;; JetBrains Mono, see https://www.jetbrains.com/lp/mono/#how-to-install
 (defconst my/font-family "JetBrains Mono" "The default font family.")
 (defconst my/font-height 13 "The default font height.")
+(defconst my/line-spacing 0.2 "Additional space to put between lines.")
 (defconst my/font-ligatures
   '("-->" "//" "/**" "/*" "*/" "<!--" ":=" "->>" "<<-" "->" "<-"
     "<=>" "==" "!=" "<=" ">=" "=:=" "!==" "&&" "||" "..." ".."
