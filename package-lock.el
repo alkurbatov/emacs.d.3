@@ -1,6 +1,6 @@
 (("compat" . "bf032a05d0e4f60b175d7cb268bdeb53ea0a0aae")
  ("cond-let" . "0430bd1eb3493ea90d69feb6b7eb7dac3e10d0ba")
- ("consult" . "74e6cc77609cb36cd61aa2a23848659fbb66f05a")
+ ("consult" . "d1d39d52151a10f7ca29aa291886e99534cc94db")
  ("dash.el" . "fb443e7a6e660ba849cafcd01021d9aac3ac6764")
  ("diff-hl" . "e79aa49ad3cbbe85379cf6646db3aaacd3b04708")
  ("ef-themes" . "99f978d9c68b8bca9935eb23dd62f8370e2a68e7")
@@ -37,6 +37,6 @@
  ("seq" . "da86da9bf111f68fb81efd466d76d53af5aebc00")
  ("straight.el" . "4b6289f42a4da0c1bae694ba918b43c72daf0330")
  ("trailing-newline-indicator" . "7a53505df0b76784680b8fc2a97b11e259788a74")
- ("vertico" . "a7365958439c86f5cabb9cd4bb93c0a4118eedc1")
+ ("vertico" . "8bb6751709c4d84eb539b1eea6413a81439ce29e")
  ("yasnippet" . "c1e6ff23e9af16b856c88dfaab9d3ad7b746ad37"))
 :epsilon
