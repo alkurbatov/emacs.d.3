@@ -72,8 +72,9 @@
 (require 'compilation)
 (require 'make)
 (require 'project-manager)
-(require 'version-control)
+(require 'remote)
 (require 'snippets)
+(require 'version-control)
 
 (require 'cpp)
 (require 'elisp)
