@@ -1,0 +1,16 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Table test template
+# --
+func Test${1:Function}(t *testing.T) {
+	tests := []struct {
+		name         string
+        $2
+	}{
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+            $3
+		})
+	}
+}
