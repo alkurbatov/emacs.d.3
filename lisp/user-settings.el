@@ -56,6 +56,17 @@ This is path to a file, not to a directory."
   :type 'string)
 
 
+;; 📦 EXEC-PATH-FROM-SHELL
+;; Make Emacs in the GUI mode use the $PATH set up by the user's shell.
+(use-package exec-path-from-shell
+  :straight t
+
+  :if (display-graphic-p)
+
+  :config
+  (exec-path-from-shell-initialize))
+
+
 ;; Allow to cal `eval' in `.dir-locals.el'.
 (setopt enable-local-eval t)
 
