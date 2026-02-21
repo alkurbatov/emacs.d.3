@@ -43,6 +43,15 @@
   (messages-buffer-mode . visual-line-mode)
   (text-mode . visual-line-mode))
 
+;; 📦 DRAG-STUFF
+;; Drag stuff around in Emacs
+(use-package drag-stuff
+  :straight t
+
+  :config
+  (drag-stuff-global-mode 1)
+  (drag-stuff-define-keys))
+
 
 ;; Auto completion.
 (setopt completion-ignore-case t
