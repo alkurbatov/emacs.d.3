@@ -11,7 +11,8 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     llvm \
     pipx \
     pkg-config \
-    ripgrep
+    ripgrep \
+    uv
 
   pipx install \
        pyright
@@ -35,6 +36,7 @@ if [[ "${ID}" = fedora ]]; then
        pipx \
        pkgconf-pkg-config \
        ripgrep \
+       uv \
        wl-clipboard
 
   pipx install \
