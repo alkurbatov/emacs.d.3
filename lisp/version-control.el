@@ -53,6 +53,11 @@
                        :foreground red-cooler
                        :background bg-main)))
 
+;; 📦 GIT-MODES
+;; Emacs major modes for Git configuration files.
+(use-package git-modes
+  :straight t)
+
 ;; 📦 GIT-LINK
 ;; Get full web link to the current line in repository.
 (use-package git-link
