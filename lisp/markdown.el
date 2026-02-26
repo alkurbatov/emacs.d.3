@@ -10,6 +10,10 @@
   :hook
   ((markdown-ts-mode . visual-line-mode)))
 
+;; 📦 MARKDOWN-MODE
+;; Emacs Markdown Mode.
+(use-package markdown-mode
+  :straight t)
 
 (provide 'markdown)
 ;;; markdown.el ends here
