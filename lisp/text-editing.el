@@ -50,7 +50,9 @@
 
   :config
   (drag-stuff-global-mode 1)
-  (drag-stuff-define-keys))
+  (drag-stuff-define-keys)
+
+  (add-to-list 'mode-line-collapse-minor-modes 'drag-stuff-mode))
 
 
 ;; Auto completion.
@@ -75,7 +77,7 @@
 ;; Don't require double spaces after dot.
 (setopt sentence-end-double-space nil)
 
-;; Always insert final newlone.
+;; Always insert final newline.
 (setopt require-final-newline t)
 
 (setopt standard-indent 2)
