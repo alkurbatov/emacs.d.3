@@ -27,7 +27,7 @@
   (setopt consult-project-root-function #'project-root)
 
   ;; Additional markers of a project.
-  (setopt project-vc-extra-root-markers '(".project"))
+  (setopt project-vc-extra-root-markers '(".project" ".git"))
 
   :bind
   (:map project-prefix-map
