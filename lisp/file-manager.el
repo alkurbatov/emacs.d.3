@@ -35,6 +35,9 @@
   ;; -a is required to get ".." from ls-lisp; "." is hidden via dired-omit below.
   (setopt dired-listing-switches "-lah")
 
+  (modus-themes-with-colors
+   (set-face-attribute 'dired-directory nil :weight 'bold))
+
   :bind
   (("C-x d" . dired-jump)))
 
