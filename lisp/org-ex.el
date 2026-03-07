@@ -14,10 +14,13 @@
 ;; Org text format.
 (use-package org
   :config
-  ;; Allow manual change of inline images size
+  ;; Allow manual change of inline images size.
   (setopt org-image-actual-width nil)
 
-  ;; Enable document parsing
+  ;; Open link by pressing Enter.
+  (setopt org-return-follows-link t)
+
+  ;; Enable document parsing.
   (setopt TeX-auto-save t
           TeX-parse-self t)
 
