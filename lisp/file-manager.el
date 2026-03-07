@@ -4,11 +4,16 @@
 
 ;;; Code:
 
-(defun my/open-dired ()
-  "Open Dired in the current folder."
-  (interactive)
+;; 📦 LS-LISP
+;; Built-in Emacs Lisp implementation of ls.
+;; Avoids dependency on GNU coreutils and enables portable directory sorting.
+(use-package ls-lisp
+  :config
+  ;; Use Emacs's own ls implementation instead of the system one.
+  (setopt ls-lisp-use-insert-directory-program nil)
 
-  (dired "."))
+  ;; Show directories before files (like Midnight Commander).
+  (setopt ls-lisp-dirs-first t))
 
 ;; 📦 DIRED
 ;; File manager.
@@ -26,11 +31,21 @@
   ;; Move files to trash instead of deletion.
   (setopt delete-by-moving-to-trash t)
 
-  (setopt dired-listing-switches
-          "-l --human-readable --all --group-directories-first --dired")
+  ;; Use short flags compatible with ls-lisp (no GNU-specific long options).
+  ;; -a is required to get ".." from ls-lisp; "." is hidden via dired-omit below.
+  (setopt dired-listing-switches "-lah")
 
   :bind
-  (("C-x d" . my/open-dired)))
+  (("C-x d" . dired-jump)))
+
+;; 📦 DIRED-X
+;; Dired extras.
+(use-package dired-x
+  :config
+  ;; Match only the single dot (current dir); ".." and dotfiles are unaffected.
+  (setopt dired-omit-files "^\\.$")
+
+  :hook (dired-mode . dired-omit-mode))
 
 
 (provide 'file-manager)
