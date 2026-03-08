@@ -36,6 +36,7 @@ if [[ "${ID}" = fedora ]]; then
        pipx \
        pkgconf-pkg-config \
        ripgrep \
+       util-linux \
        uv \
        wl-clipboard
 

@@ -4,6 +4,13 @@
 
 ;;; Code:
 
+(defun my/insert-uuid ()
+  "Insert a random UUID at point."
+  (interactive)
+  (let ((uuid (downcase (string-trim (shell-command-to-string "uuidgen")))))
+    (insert "\"" uuid "\"")))
+
+
 ;; 📦 FLYMAKE
 ;; Static analysis.
 (use-package flymake
