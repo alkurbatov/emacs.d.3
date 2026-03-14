@@ -4,6 +4,21 @@
 
 ;;; Code:
 
+(defun my/vertico-file-sort-key (f)
+  "Return a string sort key for file candidate F.
+Encodes group (.dir/dir/.file/file), case (upper/lower), then name."
+  (let ((group (cond ((and (string-prefix-p "." f) (string-suffix-p "/" f)) 0)
+                     ((string-suffix-p "/" f) 1)
+                     ((string-prefix-p "." f) 2)
+                     (t 3)))
+        (upper (if (string-match-p "\\`[[:upper:]]" f) 0 1)))
+    (format "%d%d%s" group upper f)))
+
+(defun my/vertico-sort-directories-first (candidates)
+  "Sort CANDIDATES like Midnight Commander does: .dirs, dirs, .files, files."
+  (seq-sort-by #'my/vertico-file-sort-key #'string< candidates))
+
+
 ;; 📦 UNIQUIFY
 ;; Make unique buffer names.
 (use-package uniquify
@@ -42,6 +57,10 @@
 
   ;; Cycle through items. Convenient when working with history.
   (setopt vertico-cycle t)
+
+  ;; Show directories before files in find-file (like Midnight Commander).
+  (setopt vertico-multiform-categories
+          '((file (vertico-sort-function . my/vertico-sort-directories-first))))
 
   :bind
   (("M-s" . vertico-suspend)
