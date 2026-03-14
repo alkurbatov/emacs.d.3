@@ -82,5 +82,9 @@
 
 (setopt standard-indent 2)
 
+;; Enable useful region commands.
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 (provide 'text-editing)
 ;;; text-editing.el ends here
