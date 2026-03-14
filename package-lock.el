@@ -41,6 +41,7 @@
  ("s.el" . "dda84d38fffdaf0c9b12837b504b402af910d01d")
  ("seq" . "da86da9bf111f68fb81efd466d76d53af5aebc00")
  ("straight.el" . "644ba036611d5952ec49f1a8abfb6851c19ac86a")
+ ("tmr" . "759cbcd0eace4c33c64eb7695b86b9456a69e060")
  ("trailing-newline-indicator" . "4513a8dd691587b090fbd1f67e5434f300017ef7")
  ("uv-mode" . "7e7f9b90832210b65823c3d58e3255cd164394b7")
  ("vertico" . "93f15873d7d6244d72202c5dd7724a030a2d5b9a")

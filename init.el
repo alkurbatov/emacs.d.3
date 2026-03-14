@@ -84,9 +84,10 @@
 (require 'py)
 (require 'sh)
 
-(require 'personal-calendar)
-(require 'rss-reader)
 (require 'org-ex)
+(require 'personal-calendar)
+(require 'pomodoro)
+(require 'rss-reader)
 (require 'second-brain)
 
 (provide 'init.el)
