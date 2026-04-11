@@ -25,7 +25,6 @@
     (load custom-file))
 
   ;; Use y and n keys to confirm commands.
-  (defalias 'yes-or-no-p 'y-or-n-p)
   (setopt use-short-answers t
           read-answer-short t)
 
