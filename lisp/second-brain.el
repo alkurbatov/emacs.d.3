@@ -25,5 +25,20 @@
   :bind (("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)))
 
+;; 📦 ORG-ROAM-UI
+;; Interactive graph visualization of the Zettelkasten (Obsidian-like).
+(use-package org-roam-ui
+  :straight (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+  :after org-roam
+
+  :custom
+  (org-roam-ui-sync-theme t)
+  (org-roam-ui-follow t)
+  (org-roam-ui-update-on-save t)
+  (org-roam-ui-open-on-start t)
+
+  :bind
+  ("C-c n g" . org-roam-ui-open))
+
 (provide 'second-brain)
 ;;; second-brain.el ends here
