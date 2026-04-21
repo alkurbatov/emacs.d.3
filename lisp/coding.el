@@ -81,6 +81,9 @@
   ;; Increase chunk size to make Eglot faster.
   (setopt read-process-output-max (* 1024 1024))
 
+  ;; Enable LSP features in files opened via xref (e.g. stdlib or dependencies).
+  (setopt eglot-extend-to-xref t)
+
   :bind
   ("M-," . xref-go-back))
 
