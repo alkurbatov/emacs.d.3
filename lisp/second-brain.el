@@ -5,6 +5,26 @@
 
 ;;; Code:
 
+(defun my/org-roam-find-by-tag ()
+  "Select a tag from the list, then find a note."
+  (interactive)
+
+  ;; Ensure org-roam is loaded before use, mimicking autoload behavior:
+  ;; the function is available immediately after config load, but the
+  ;; package itself is deferred until first call.
+  (require 'org-roam)
+
+  (let* ((all-tags
+          (seq-uniq
+           (seq-mapcat #'org-roam-node-tags
+                       (org-roam-node-list))))
+         (tag (completing-read "Tag: " all-tags)))
+
+    (org-roam-node-find nil nil
+                        (lambda (node)
+                          (member tag (org-roam-node-tags node))))))
+
+
 ;; 📦 ORG-ROAM
 ;; Zettelkasten with org-mode.
 (use-package org-roam
@@ -23,7 +43,8 @@
                 #'org-roam-unlinked-references-section))
 
   :bind (("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert)))
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n t" . my/org-roam-find-by-tag)))
 
 ;; 📦 ORG-ROAM-UI
 ;; Interactive graph visualization of the Zettelkasten (Obsidian-like).
