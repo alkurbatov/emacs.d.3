@@ -1,6 +1,7 @@
 (("compat" . "c1308d9a03b148f566694c631bc57b261f5200fa")
  ("cond-let" . "8bf87d45e169ebc091103b2aae325aece3aa804d")
  ("consult" . "20476c690ce3ecd45460011ce6b03fd58a642181")
+ ("consult-org-roam" . "781d9c1cfee8631bc125fa45bab92de320d3941e")
  ("dash.el" . "d3a84021dbe48dba63b52ef7665651e0cf02e915")
  ("diff-hl" . "b965e19e6e7f9933199e421849a49229207c1c9f")
  ("drag-stuff.el" . "6d06d846cd37c052d79acd0f372c13006aa7e7c8")

@@ -46,6 +46,15 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n t" . my/org-roam-find-by-tag)))
 
+;; 📦 CONSULT-ORG-ROAM
+;; Consult integration for org-roam: adds preview to node search.
+(use-package consult-org-roam
+  :straight t
+  :after org-roam
+
+  :config
+  (consult-org-roam-mode 1))
+
 ;; 📦 ORG-ROAM-UI
 ;; Interactive graph visualization of the Zettelkasten (Obsidian-like).
 (use-package org-roam-ui
