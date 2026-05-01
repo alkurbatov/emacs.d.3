@@ -34,6 +34,9 @@ If target environment is not a project, 'root' link type is not declared."
   (setopt TeX-auto-save t
           TeX-parse-self t)
 
+  ;; Enable syntax highlighting in src blocks for certain languages.
+  (add-to-list 'org-src-lang-modes '("proto" . protobuf-ts))
+
   :hook
   ((org-mode . visual-line-mode)
    (org-mode . emojify-mode)
