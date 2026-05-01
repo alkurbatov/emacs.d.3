@@ -6,6 +6,7 @@
 ;;; Code:
 
 (require 'bind-key)
+(require 'environment)
 (require 'keymap)
 
 ;; Make C-g more helpful.
@@ -44,6 +45,15 @@ The DWIM behavior of this command is as follows:
 
 ;; Cmd-return to maximize/minimize frame.
 (bind-key "<s-return>" #'toggle-frame-maximized)
+
+;; Desktop-style clipboard shortcuts (GUI on Linux).
+(when os-linux
+  (bind-key "s-c" #'kill-ring-save)
+  (bind-key "s-v" #'yank))
+
+;; Make Super+C/V work with Russian keyboard layout.
+(bind-key "s-с" #'kill-ring-save)
+(bind-key "s-м" #'yank)
 
 ;; Close the buffer by [C-x k].
 (bind-key* "C-x k" #'kill-current-buffer)
