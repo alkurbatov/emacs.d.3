@@ -10,6 +10,16 @@
   (org-insert-time-stamp (current-time) nil t))
 
 
+(defun my/set-project-root-abbrev ()
+  "Add special link type 'root' to use in links to files, e.g. root:/a/b/c.
+Such links are always use project root as the base path.
+If target environment is not a project, 'root' link type is not declared."
+  (when-let* ((project (project-current))
+              (root (project-root project)))
+    (setq-local org-link-abbrev-alist
+                `(("root" . ,(concat "file:" root))))))
+
+
 ;; 📦 ORG
 ;; Org text format.
 (use-package org
@@ -26,7 +36,8 @@
 
   :hook
   ((org-mode . visual-line-mode)
-   (org-mode . emojify-mode))
+   (org-mode . emojify-mode)
+   (org-mode . my/set-project-root-abbrev))
 
   :bind
   (:map org-mode-map
