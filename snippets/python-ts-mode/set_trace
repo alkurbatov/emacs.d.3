@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: pdb.set_trace
+# --
+import pdb
+pdb.set_trace()
