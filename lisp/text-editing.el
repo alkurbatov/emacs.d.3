@@ -54,6 +54,12 @@
 
   (add-to-list 'mode-line-collapse-minor-modes 'drag-stuff-mode))
 
+;; 📦 ISO-TRANSL
+;; Unicode character input via C-x 8 prefix.
+(use-package iso-transl
+  :config
+  (define-key iso-transl-ctl-x-8-map "-" [?—]))
+
 
 ;; Auto completion.
 (setopt completion-ignore-case t
