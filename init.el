@@ -66,6 +66,7 @@
 (require 'clipboard)
 (require 'spellchecker)
 (require 'file-manager)
+(require 'terminal)
 
 (require 'coding)
 (require 'compilation)

@@ -12,6 +12,7 @@
  ("emacs-emojify" . "1b726412f19896abf5e4857d4c32220e33400b55")
  ("emacs-format-all-the-code" . "d44bf536fdae83ad7a798565e21f59c02e461c47")
  ("emacs-language-id" . "dbfbc4903ffb042552b458fac76ee9f67a022036")
+ ("emacs-libvterm" . "54c29d14bca05bdd8ae60cda01715d727831e3f9")
  ("emacs-web-server" . "3982c55e9061475038a3ccd61aecb2de3d407cec")
  ("emacs-websocket" . "2195e1247ecb04c30321702aa5f5618a51c329c5")
  ("emacsmirror-mirror" . "c4d4ac4e71e7162643cdcec4315ced8314dcef98")

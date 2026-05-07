@@ -15,6 +15,12 @@
    (project-root (project-current))
    (thing-at-point 'symbol)))
 
+(defun my/vterm-project ()
+  "Open vterm in the root of the current project."
+  (interactive)
+  (let ((default-directory (project-root (project-current t))))
+    (vterm)))
+
 
 ;; 📦 PROJECT
 ;; Project manager.
@@ -33,6 +39,7 @@
   (:map project-prefix-map
         ("f" . consult-find)
         ("s" . consult-ripgrep)
+        ("t" . my/vterm-project)
         ("." . my/consult-project-ripgrep-at-point)))
 
 
