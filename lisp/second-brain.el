@@ -83,9 +83,19 @@ These are links whose destination ID does not exist as a node."
                 #'org-roam-reflinks-section
                 #'org-roam-unlinked-references-section))
 
+  ;; Path to diary entries.
+  (setopt org-roam-dailies-directory "Календарные/Дневник/")
+
+  (setopt org-roam-dailies-capture-templates
+          '(("d" "daily" plain
+             "* Вопросы для самопроверки\n- Что я сделал?\n- Где застревал и почему?\n- Что из этого можно системно устранить?\n- Что хочу улучшить в следующем подходе?\n\n- %?\n\n* С чем приходили коллеги\n- "
+             :target (file+head "%<%Y%m%d%H%M%S>-дневник.org" "#+title: Дневник - %<%Y-%m-%d>")
+             :unnarrowed t)))
+
   :bind (("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
-         ("C-c n t" . my/org-roam-find-by-tag)))
+         ("C-c n t" . my/org-roam-find-by-tag)
+         ("C-c C-j" . org-roam-dailies-capture-today)))
 
 ;; 📦 CONSULT-ORG-ROAM
 ;; Consult integration for org-roam: adds preview to node search.
