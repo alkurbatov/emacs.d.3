@@ -4,6 +4,7 @@ set -euxo pipefail
 
 if [[ "${OSTYPE}" = darwin* ]]; then
   brew install \
+    cmake \
     enchant \
     font-jetbrains-mono \
     git \
@@ -29,6 +30,7 @@ source /etc/os-release
 if [[ "${ID}" = fedora ]]; then
   sudo dnf install \
        clang \
+       cmake \
        enchant2 \
        enchant2-devel \
        coreutils \
