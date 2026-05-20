@@ -35,7 +35,7 @@ if [[ "${ID}" = fedora ]]; then
        enchant2-devel \
        coreutils \
        git \
-       gopls \
+       golang \
        jetbrains-mono-fonts \
        libsqlite3x-devel \
        libvterm \
@@ -48,6 +48,9 @@ if [[ "${ID}" = fedora ]]; then
 
   pipx install \
        pyright
+
+  go install \
+     golang.org/x/tools/gopls@latest
 
   exit 0
 fi
