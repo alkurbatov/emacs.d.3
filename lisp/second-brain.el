@@ -94,8 +94,8 @@ These are links whose destination ID does not exist as a node."
 
   :bind (("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
-         ("C-c n t" . my/org-roam-find-by-tag)
-         ("C-c C-j" . org-roam-dailies-capture-today)))
+         ("C-c n j" . org-roam-dailies-capture-today)
+         ("C-c n t" . my/org-roam-find-by-tag)))
 
 ;; 📦 CONSULT-ORG-ROAM
 ;; Consult integration for org-roam: adds preview to node search.
