@@ -3,6 +3,13 @@
 set -euxo pipefail
 
 if [[ "${OSTYPE}" = darwin* ]]; then
+  brew tap d12frosted/emacs-plus
+  brew trust --formula d12frosted/emacs-plus/emacs-plus@31
+
+  brew install emacs-plus@31 \
+    --with-xwidgets \
+    --formula
+
   brew install \
     cmake \
     enchant \
