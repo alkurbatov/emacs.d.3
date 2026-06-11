@@ -79,7 +79,7 @@
                                           (eglot-capf (styles orderless))))
 
   ;; Increase chunk size to make Eglot faster.
-  (setopt read-process-output-max (* 1024 1024))
+  (setopt read-process-output-max (* 4 1024 1024)) ; 4096kb
 
   ;; Enable LSP features in files opened via xref (e.g. stdlib or dependencies).
   (setopt eglot-extend-to-xref t)
