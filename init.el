@@ -79,6 +79,7 @@
 (require 'cpp)
 (require 'elisp)
 (require 'golang)
+(require 'jinja2)
 (require 'markdown)
 (require 'protobuf)
 (require 'py)
