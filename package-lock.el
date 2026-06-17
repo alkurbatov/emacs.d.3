@@ -25,7 +25,7 @@
  ("gnu-elpa-mirror" . "c8d38eb3023cbca6e88d56d52c75af2dfdfcbbb6")
  ("gotest-ts.el" . "b12e08d925bab705792f14b29acdca9af550d9a8")
  ("gotest.el" . "490189e68d743a851bfb42d0017428a7550e8615")
- ("hl-todo" . "9540fc414014822dde00f0188b74e17ac99e916d")
+ ("hl-todo" . "527d545b8c2f36243194cbe4a8d0e6ac9d50e6a7")
  ("ht.el" . "1c49aad1c820c86f7ee35bf9fff8429502f60fef")
  ("inheritenv" . "b9e67cc20c069539698a9ac54d0e6cc11e616c6f")
  ("jinx" . "5aed0911971b866d75e326a9258a20a66df0cff2")
