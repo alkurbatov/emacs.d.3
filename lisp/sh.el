@@ -10,6 +10,7 @@
   :mode
   ("\\.bash_aliases\\'" . bash-ts-mode)
   ("\\.bashrc\\'" . bash-ts-mode)
+  ("\\.env.example\\'" . bash-ts-mode)
   ("\\.env\\'" . bash-ts-mode)
   ("\\.envrc\\'" . bash-ts-mode)
   ("\\.profile\\'" . bash-ts-mode)
