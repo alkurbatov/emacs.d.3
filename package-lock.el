@@ -45,6 +45,7 @@
  ("pythonic" . "bf364a29e2f21828941ee3d11a27127bc260740f")
  ("s.el" . "dda84d38fffdaf0c9b12837b504b402af910d01d")
  ("seq" . "da86da9bf111f68fb81efd466d76d53af5aebc00")
+ ("straight-overview" . "4592fd837dd246281f931f7d7b171fd6bca6fc1a")
  ("straight.el" . "644ba036611d5952ec49f1a8abfb6851c19ac86a")
  ("tmr" . "a43ed27503554cde1a7f9908557cc1e2a78bd53e")
  ("trailing-newline-indicator" . "4513a8dd691587b090fbd1f67e5434f300017ef7")

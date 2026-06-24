@@ -28,5 +28,14 @@
 
 (require 'use-package)
 
+;; 📦 STRAIGHT-OVERVIEW
+;; Selective-upgrade UI for straight.el packages.
+(use-package straight-overview
+  :straight
+  (:host github :repo "alberti42/straight-overview")
+
+  :commands
+  (straight-overview))
+
 (provide 'package-manager)
 ;;; package-manager.el ends here
