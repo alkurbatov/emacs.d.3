@@ -35,7 +35,8 @@
 (use-package gotest-ts
   :straight t
 
-  :hook (go-ts-mode . gotest-ts-setup)
+  :hook
+  (go-ts-mode . gotest-ts-setup)
 
   :bind
   (("<f2>" . gotest-ts-run-dwim)))
