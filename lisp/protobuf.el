@@ -18,7 +18,13 @@
 ;; 📦 PROTOBUF-TS-MODE
 ;; Tree-sitter integration for Protobuf.
 (use-package protobuf-ts-mode
-  :straight t)
+  :straight t
+
+  :mode
+  ("\\.proto\\'" . protobuf-ts-mode)
+
+  :hook
+  (protobuf-ts-mode . subword-mode))
 
 
 (provide 'protobuf)
