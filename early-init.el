@@ -40,15 +40,15 @@
 
 ;; Don't show tooltips in GUI.
 (when (fboundp 'tooltip-mode)
-  (tooltip-mode nil))
+  (setopt tooltip-mode nil))
 
-(defun my/display-starttup-stats ()
+(defun my/display-startup-stats ()
   "Show some startup statistics in the *Messages* buffer."
   (message "Emacs ready in %s with %d garbage collections."
            (format "%.2f seconds"
                    (float-time (time-subtract after-init-time before-init-time)))
            gcs-done))
 
-(add-hook 'emacs-startup-hook #'my/display-starttup-stats)
+(add-hook 'emacs-startup-hook #'my/display-startup-stats)
 
 ;;; early-init.el ends here
