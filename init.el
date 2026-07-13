@@ -58,6 +58,7 @@
 (require 'appearance)
 (require 'typography)
 (require 'help-ex)
+(require 'modeline)
 (require 'user-session)
 (require 'minibuffer-ex)
 

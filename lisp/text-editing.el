@@ -39,6 +39,10 @@
   ;; Don't indent with tabs.
   (indent-tabs-mode nil)
 
+  ;; Show line:column in the mode-line-position segment.
+  (line-number-mode 1)
+  (column-number-mode 1)
+
   :hook
   (messages-buffer-mode . visual-line-mode)
   (text-mode . visual-line-mode))
