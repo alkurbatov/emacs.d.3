@@ -27,6 +27,8 @@
           dired-auto-revert-buffer t
           auto-revert-verbose nil)
 
+  (add-to-list 'mode-line-collapse-minor-modes 'auto-revert-mode)
+
   (global-auto-revert-mode t))
 
 ;; 📦 RECENTF-MODE

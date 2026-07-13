@@ -87,6 +87,12 @@
   :bind
   ("M-," . xref-go-back))
 
+;; 📦 ELDOC
+;; Context documentation.
+(use-package eldoc
+  :config
+  (add-to-list 'mode-line-collapse-minor-modes 'eldoc-mode))
+
 
 ;; Install extended language grammar without questions.
 (setopt treesit-auto-install-grammar 'always)
