@@ -11,12 +11,12 @@ repos:
         exclude: snippets
 
   - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.15.0
+    rev: v0.17.0
     hooks:
       - id: markdownlint
 
   - repo: https://github.com/jamescherti/pre-commit-elisp
-    rev: v1.0.8
+    rev: v1.0.9
     hooks:
       - id: elisp-check-parens
       - id: elisp-indent
