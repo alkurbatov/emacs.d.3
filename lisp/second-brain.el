@@ -25,6 +25,19 @@
                           (member tag (org-roam-node-tags node))))))
 
 
+(defun my/org-roam-rename-inserted-link (_id description)
+  "Prompt to rename the link just inserted for node _ID.
+DESCRIPTION is the default link text (usually the node's title).
+Press RET to keep it, or edit it to rename the link."
+  (let ((new-description (read-string "Description: " description)))
+    (unless (string-equal new-description description)
+      (let ((end (- (point) 2))
+            (beg (- (point) 2 (length description))))
+        (goto-char beg)
+        (delete-region beg end)
+        (insert new-description)))))
+
+
 (defun my/org-roam-find-dangling-links ()
   "Find all dangling id: links in the org-roam database.
 These are links whose destination ID does not exist as a node."
@@ -77,6 +90,8 @@ These are links whose destination ID does not exist as a node."
     :straight t)
 
   (org-roam-db-autosync-mode)
+
+  (add-hook 'org-roam-post-node-insert-hook #'my/org-roam-rename-inserted-link)
 
   (setopt org-roam-mode-sections
           (list #'org-roam-backlinks-section
