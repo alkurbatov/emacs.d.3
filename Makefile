@@ -15,3 +15,7 @@ install: ## Install Emacs configuration into the current system
 .PHONY: copy-lock
 copy-lock: ## Copy lock from ~/.emacs.d to the repo
 	cp ~/.emacs.d/straight/versions/default.el package-lock.el
+
+.PHONY: test
+test: ## Run unit tests
+	emacs -Q --batch -L lisp $(foreach f,$(wildcard lisp/*-test.el),-l $(f)) -f ert-run-tests-batch-and-exit

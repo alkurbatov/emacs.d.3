@@ -87,6 +87,7 @@
 (require 'sh)
 
 (require 'org-ex)
+(require 'org-to-telegram)
 (require 'personal-calendar)
 (require 'pomodoro)
 (require 'rss-reader)

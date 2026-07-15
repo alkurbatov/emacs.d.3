@@ -11,6 +11,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     --formula
 
   brew install \
+    claude-code \
     cmake \
     enchant \
     font-jetbrains-mono \
