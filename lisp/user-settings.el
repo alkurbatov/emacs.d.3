@@ -42,7 +42,7 @@
   "Where Emacs should store backups."
   :type 'string)
 
-(defcustom my/auto-save-directory (concat user-emacs-directory "auto-save")
+(defcustom my/auto-save-directory (concat user-emacs-directory "auto-save/")
   "Where Emacs should store auto saved files."
   :type 'string)
 
