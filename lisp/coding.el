@@ -84,6 +84,11 @@
   ;; Enable LSP features in files opened via xref (e.g. stdlib or dependencies).
   (setopt eglot-extend-to-xref t)
 
+  ;; Report system messages in English.
+  ;; To avoid cases when Eglot hides real reason behind weird localized
+  ;; messages, e.g. "Attempt to store non-ASCII char into multibyte string".
+  (setopt system-messages-locale "C")
+
   :bind
   ("M-," . xref-go-back))
 
