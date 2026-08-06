@@ -26,5 +26,9 @@
   ((c++-ts-mode . eglot-ensure)))
 
 
+(add-to-list 'auto-mode-alist '("/\\.clang-format\\'" . yaml-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.clang-tidy\\'" . yaml-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.clangd\\'" . yaml-ts-mode))
+
 (provide 'cpp)
 ;;; cpp.el ends here
