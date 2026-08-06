@@ -34,23 +34,20 @@
   :hook
   (prog-mode . flymake-mode))
 
-;; 📦 FORMAT-ALL
-;; Set of utilities to format code on save.
-(use-package format-all
+;; 📦 APHELEIA
+;; Run code formatter on buffer contents without moving point, using RCS patches
+;; and dynamic programming.
+(use-package apheleia
   :straight t
 
-  :commands format-all-mode
-
   :config
-  ;; Be silent when we can't format buffer, it could be temporal error because
-  ;; of syntax mistake.
-  (setopt format-all-show-errors 'never)
+  ;; By default Apheleia refuses to touch buffers opened via TRAMP.
+  (setopt apheleia-remote-algorithm 'remote)
 
-  (add-to-list 'mode-line-collapse-minor-modes 'format-all-mode)
+  (add-to-list 'mode-line-collapse-minor-modes 'apheleia-mode)
 
   :hook
-  ((prog-mode . format-all-mode)
-   (format-all-mode . format-all-ensure-formatter)))
+  (after-init . apheleia-global-mode))
 
 ;; 📦 EVIL-NERD-COMMENTER
 ;; Convenient comment/uncomment action like in Vim.

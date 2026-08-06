@@ -3,16 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'format-all)
-
-;; Register golangci-lint formatter.
-(define-format-all-formatter
- golangci-lint
- (:executable "golangci-lint")
- (:install "See https://golangci-lint.run/docs/welcome/install/")
- (:languages "Go")
- (:features)
- (:format (format-all--buffer-easy executable "fmt" "--stdin")))
 
 ;; 📦 GO-TS-MODE
 ;; Tree-sitter integration for Golang.
