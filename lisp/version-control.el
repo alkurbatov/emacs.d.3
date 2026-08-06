@@ -31,10 +31,6 @@
 (use-package diff-hl
   :straight t
 
-  :init
-  ;; Highlight changes if version control enabled.
-  (global-diff-hl-mode)
-
   :config
   ;; Show changes in unsaved buffers.
   (diff-hl-flydiff-mode)
@@ -51,7 +47,10 @@
                        :background bg-main)
    (set-face-attribute 'diff-hl-margin-delete nil
                        :foreground red-cooler
-                       :background bg-main)))
+                       :background bg-main))
+
+  :hook
+  (after-init . global-diff-hl-mode))
 
 ;; 📦 GIT-MODES
 ;; Emacs major modes for Git configuration files.

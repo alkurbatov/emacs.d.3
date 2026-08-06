@@ -14,7 +14,7 @@
   (add-to-list 'mode-line-collapse-minor-modes 'jinx-mode)
 
   :hook
-  (emacs-startup . global-jinx-mode)
+  (after-init . global-jinx-mode)
 
   :bind
   (("M-4" . jinx-correct)))

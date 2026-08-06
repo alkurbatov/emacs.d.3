@@ -57,13 +57,13 @@
 (use-package trailing-newline-indicator
   :straight t
 
-  :init
-  (global-trailing-newline-indicator-mode 1)
-
   :config
   (setopt trailing-newline-indicator-show-line-number nil)
 
-  (add-to-list 'mode-line-collapse-minor-modes 'trailing-newline-indicator-mode))
+  (add-to-list 'mode-line-collapse-minor-modes 'trailing-newline-indicator-mode)
+
+  :hook
+  (after-init . global-trailing-newline-indicator-mode))
 
 ;; 📦 PIXEL-SCROLL
 ;; Smooth scrolling.
@@ -80,8 +80,8 @@
 ;; 📦 HL-LINE
 ;; Highlight line with cursor.
 (use-package hl-line
-  :config
-  (global-hl-line-mode))
+  :hook
+  (after-init . global-hl-line-mode))
 
 ;; 📦 WHITESPACE
 ;; Show spaces, tabs, line endings etc.
@@ -109,9 +109,6 @@
 (use-package hl-todo
   :straight t
 
-  :init
-  (global-hl-todo-mode)
-
   :config
   (setopt hl-todo-highlight-punctuation ":")
 
@@ -122,7 +119,10 @@
              ("CRUTCH"     . ,yellow-warmer)
              ("FIXME"      . ,red-warmer)
              ("NB"         . ,cyan-warmer)
-             ("NOTE"       . ,cyan-warmer)))))
+             ("NOTE"       . ,cyan-warmer))))
+
+  :hook
+  (after-init . global-hl-todo-mode))
 
 
 (setopt cursor-in-non-selected-windows nil ; hide cursor in inactive windows

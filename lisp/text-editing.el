@@ -53,10 +53,12 @@
   :straight t
 
   :config
-  (drag-stuff-global-mode 1)
   (drag-stuff-define-keys)
 
-  (add-to-list 'mode-line-collapse-minor-modes 'drag-stuff-mode))
+  (add-to-list 'mode-line-collapse-minor-modes 'drag-stuff-mode)
+
+  :hook
+  (after-init . drag-stuff-global-mode))
 
 ;; 📦 ISO-TRANSL
 ;; Unicode character input via C-x 8 prefix.

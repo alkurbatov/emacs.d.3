@@ -49,7 +49,8 @@ XLFD: https://www.x.org/releases/X11R7.7/doc/xorg-docs/xlfd/xlfd.html"
   :config
   (ligature-set-ligatures 't my/font-ligatures)
 
-  (global-ligature-mode))
+  :hook
+  (after-init . global-ligature-mode))
 
 ;; 📦 EMOJIFY
 ;; Display emojis in Emacs.

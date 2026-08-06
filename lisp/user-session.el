@@ -29,7 +29,8 @@
 
   (add-to-list 'mode-line-collapse-minor-modes 'auto-revert-mode)
 
-  (global-auto-revert-mode t))
+  :hook
+  (after-init . global-auto-revert-mode))
 
 ;; 📦 RECENTF-MODE
 ;; Remember list of recently opened files.
