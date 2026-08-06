@@ -37,7 +37,7 @@
    (os-macos
     (setopt interprogram-cut-function 'copy-from-osx)
     (setopt interprogram-paste-function 'paste-to-osx))
-   (os-linux
+   ((and os-linux (getenv "WAYLAND_DISPLAY"))
     (setopt interprogram-cut-function 'copy-from-linux-wayland)
     (setopt interprogram-paste-function 'paste-to-linux-wayland))))
 
