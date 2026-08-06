@@ -98,6 +98,7 @@ Encodes group (.dir/dir/.file/file), case (upper/lower), then name."
   :bind
   (("C-s" . consult-line)
    ("C-x b" . consult-buffer)
+   ("M-y" . consult-yank-pop)
    ("M-g g" . consult-goto-line)))
 
 
