@@ -14,6 +14,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     claude-code \
     cmake \
     enchant \
+    hunspell \
     font-jetbrains-mono \
     git \
     gopls \
@@ -39,11 +40,13 @@ if [[ "${ID}" = fedora ]]; then
   sudo dnf install \
        clang \
        cmake \
+       coreutils \
+       curl \
        enchant2 \
        enchant2-devel \
-       coreutils \
        git \
        golang \
+       hunspell-ru \
        jetbrains-mono-fonts \
        libsqlite3x-devel \
        libvterm \
@@ -67,15 +70,17 @@ if [[ "${ID}" = debian ]]; then
     sudo apt-get install \
          clang \
          cmake \
-         libenchant-2-2 \
-         libenchant-2-dev \
+         curl \
+         fonts-jetbrains-mono \
          git \
          golang \
-         fonts-jetbrains-mono \
+         hunspell-ru \
+         libenchant-2-2 \
+         libenchant-2-dev \
          libsqlite3-dev \
          libvterm-dev \
-         ripgrep \
          pipx \
+         ripgrep \
          wl-clipboard
 
     pipx install \
