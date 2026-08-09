@@ -51,10 +51,17 @@
 This is path to a file, not to a directory."
   :type 'string)
 
+(defcustom my/with-rss nil
+  "Enable RSS reader."
+  :type 'boolean)
+
 (defcustom my/elfeed-db-directory (concat user-emacs-directory "elfeed")
   "Path to the folder containing Elfeed RSS database."
   :type 'string)
 
+(defcustom my/with-second-brain nil
+  "Enable second brain (org-roam)."
+  :type 'boolean)
 
 ;; 📦 EXEC-PATH-FROM-SHELL
 ;; Make Emacs in the GUI mode use the $PATH set up by the user's shell.
