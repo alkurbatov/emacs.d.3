@@ -45,6 +45,16 @@
 
   (recentf-mode t))
 
+;; 📦 BOOKMARK
+;; Remember point in file.
+(use-package bookmark
+  :config
+  ;; Hide confusing bookmark icon displayed on the fringe.
+  (setopt bookmark-fringe-mark nil)
+
+  ;; Write changes to the bookmark file as soon as 1 modification is made.
+  (setopt bookmark-save-flag 1))
+
 ;; 📦 SAVEHIST
 ;; Remember commands history.
 (use-package savehist

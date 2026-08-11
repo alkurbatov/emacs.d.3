@@ -17,8 +17,8 @@
   ;; Assume that all themes are safe.
   (setopt custom-safe-themes t)
 
-  ;; All customisations here.
-  (setq modus-themes-mixed-fonts t)
+  ;; All customizations here.
+  (setopt modus-themes-mixed-fonts t)
 
   (modus-themes-load-theme 'ef-maris-dark))
 
