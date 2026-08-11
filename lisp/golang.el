@@ -20,17 +20,6 @@
   ((go-ts-mode . eglot-ensure)
    (go-ts-mode . subword-mode)))
 
-;; 📦 GOTEST-TS
-;; Run Golang unit-tests from Emacs.
-(use-package gotest-ts
-  :straight t
-
-  :hook
-  (go-ts-mode . gotest-ts-setup)
-
-  :bind
-  (("<f2>" . gotest-ts-run-dwim)))
-
 
 (provide 'golang)
 ;;; golang.el ends here
