@@ -99,6 +99,9 @@
 ;; Install extended language grammar without questions.
 (setopt treesit-auto-install-grammar 'always)
 
+;; For maximum syntax highlights. Especially helpful in C++.
+(setopt treesit-font-lock-level 4)
+
 ;; Enable tree-sitter everywhere.
 (setopt treesit-enabled-modes t)
 
