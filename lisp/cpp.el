@@ -4,6 +4,25 @@
 
 ;;; Code:
 
+(defun my/cpp-switch-source-header ()
+  "Switch between a C++ source file and its header via clangd.
+
+Relies on clangd's index (the \"textDocument/switchSourceHeader\"
+LSP extension), so it finds the counterpart even when it lives in
+a different directory, unlike `ff-find-other-file'."
+  (interactive)
+
+  (let ((server (eglot-current-server)))
+    (unless server
+      (user-error "No active eglot server"))
+
+    (let ((uri (jsonrpc-request server :textDocument/switchSourceHeader
+                                (eglot--TextDocumentIdentifier))))
+      (if (not (seq-empty-p uri))
+          (find-file (eglot-uri-to-path uri))
+        (user-error "No matching source/header file found")))))
+
+
 ;; 📦 C++-TS-MODE
 ;; Tree-sitter integration for C++.
 (use-package c++-ts-mode
@@ -29,7 +48,11 @@
                       "--header-insertion-decorators=0"))))
 
   :hook
-  (c++-ts-mode . eglot-ensure))
+  (c++-ts-mode . eglot-ensure)
+
+  :bind
+  (:map c++-ts-mode-map
+        ("C-c o" . my/cpp-switch-source-header)))
 
 
 (add-to-list 'auto-mode-alist '("/\\.clang-format\\'" . yaml-ts-mode))
