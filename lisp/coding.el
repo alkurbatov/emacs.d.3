@@ -87,7 +87,9 @@
   (setopt system-messages-locale "C")
 
   :bind
-  ("M-," . xref-go-back))
+  (:map eglot-mode-map
+        ("M-," . xref-go-back)
+        ("C-c a" . eglot-code-actions)))
 
 ;; 📦 ELDOC
 ;; Context documentation.
