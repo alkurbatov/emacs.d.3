@@ -63,6 +63,7 @@
 (require 'minibuffer-ex)
 
 (require 'text-editing)
+(require 'text-completion)
 (require 'global-keybindings)
 (require 'clipboard)
 (require 'spellchecker)

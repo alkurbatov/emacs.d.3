@@ -67,10 +67,6 @@
   (define-key iso-transl-ctl-x-8-map "-" [?—]))
 
 
-;; Auto completion.
-(setopt completion-ignore-case t
-        read-file-name-completion-ignore-case t)
-
 ;; Don't refresh buffer on text input.
 (setopt redisplay-skip-fontification-on-input t)
 
