@@ -17,9 +17,6 @@
   ("\\.sh\\'" . bash-ts-mode)
 
   :config
-  ;; Always use spaces.
-  (setopt indent-tabs-mode nil)
-
   ;; Force tree-sitter mode.
   (add-to-list 'major-mode-remap-alist '(sh-mode . bash-ts-mode)))
 

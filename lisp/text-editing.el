@@ -37,7 +37,7 @@
   (setopt backward-delete-char-untabify-method 'hungry)
 
   ;; Don't indent with tabs.
-  (indent-tabs-mode nil)
+  (setopt indent-tabs-mode nil)
 
   ;; Show line:column in the mode-line-position segment.
   (line-number-mode 1)
