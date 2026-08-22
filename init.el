@@ -1,7 +1,7 @@
 ;;; init.el --- Emacs configuration v3 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;;; Main entry point.
+;; Main entry point.
 
 ;;; Code:
 
