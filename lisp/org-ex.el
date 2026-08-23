@@ -3,6 +3,7 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'user-settings)
 
 (defun my/org-time-stamp-inactive ()
   "Insert inactive timestamp with current date."
@@ -37,15 +38,29 @@ If target environment is not a project, 'root' link type is not declared."
   ;; Enable syntax highlighting in src blocks for certain languages.
   (add-to-list 'org-src-lang-modes '("proto" . protobuf-ts))
 
+  ;; Path to task files.
+  (setopt org-agenda-files
+          (list my/second-brain-directory
+                (concat my/second-brain-directory "Проекты")
+                (concat my/second-brain-directory my/dailies-directory)))
+
+  ;; Task flow.
+  (setopt org-todo-keywords
+          '((sequence "TODO" "|" "DONE" "CANCELED")))
+
+  ;; Add current time when marking item as 'DONE'
+  (setopt org-log-done 'time)
+
   :hook
   ((org-mode . visual-line-mode)
    (org-mode . emojify-mode)
    (org-mode . my/set-project-root-abbrev))
 
   :bind
-  (:map org-mode-map
-        ("C-c z" . org-toggle-link-display)
-        ("C-c i" . nano-org-time-stamp-inactive)))
+  (("C-c a" . org-agenda)
+   (:map org-mode-map
+         ("C-c z" . org-toggle-link-display)
+         ("C-c i" . nano-org-time-stamp-inactive))))
 
 
 (provide 'org-ex)

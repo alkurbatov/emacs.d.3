@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(require 'user-settings)
+
 (defun my/org-roam-find-by-tag ()
   "Select a tag from the list, then find a note."
   (interactive)
@@ -85,6 +87,8 @@ These are links whose destination ID does not exist as a node."
   :straight t
 
   :config
+  (setopt org-roam-directory my/second-brain-directory)
+
   ;; Org-roam now requires additional package to work with sqlite DB.
   (use-package sqlite3
     :straight t)
@@ -99,11 +103,11 @@ These are links whose destination ID does not exist as a node."
                 #'org-roam-unlinked-references-section))
 
   ;; Path to diary entries.
-  (setopt org-roam-dailies-directory "Календарные/Дневник/")
+  (setopt org-roam-dailies-directory my/dailies-directory)
 
   (setopt org-roam-dailies-capture-templates
           '(("d" "daily" plain
-             "* Вопросы для самопроверки\n- Что я сделал?\n- Где застревал и почему?\n- Что из этого можно системно устранить?\n- Что хочу улучшить в следующем подходе?\n\n- %?\n\n* С чем приходили коллеги\n- "
+             "* Вопросы для самопроверки\n- Что я сделал?\n- Где застревал и почему?\n- Что из этого можно системно устранить?\n- Что хочу улучшить в следующем подходе?\n\n- %?\n\n* С чем приходили коллеги\n- \n\n* Что интересного я узнал\n- "
              :target (file+head "%<%Y%m%d%H%M%S>-дневник.org" "#+title: Дневник - %<%Y-%m-%d>")
              :unnarrowed t)))
 
