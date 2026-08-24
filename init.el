@@ -87,14 +87,14 @@
 (require 'py)
 (require 'sh)
 
-(require 'org-ex)
 (require 'personal-calendar)
 (require 'pomodoro)
-(when my/with-rss
-  (require 'rss-reader))
 (when my/with-second-brain
+  (require 'org-ex)
   (require 'second-brain)
   (require 'org-to-telegram))
+(when my/with-rss
+  (require 'rss-reader))
 
 (provide 'init.el)
 ;;; init.el ends here
