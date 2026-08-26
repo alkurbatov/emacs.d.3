@@ -4,8 +4,8 @@ The third incarnation of my Emacs configuration.
 
 ## Requirements
 
-- Linux or macOS.
-- Emacs >= 31.0.50
+- Linux (Debian, Fedora) or macOS.
+- Emacs >= 31.1.
 
 ## Installation
 

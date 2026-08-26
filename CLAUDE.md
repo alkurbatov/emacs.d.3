@@ -2,6 +2,10 @@
 
 Guidance for Claude Code when working in this repository.
 
+## Environment
+
+- Emacs version: GNU Emacs 31.1.
+
 ## Repo layout
 
 - See the "Project structure" section of [README.md](README.md) for the

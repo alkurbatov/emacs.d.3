@@ -6,8 +6,8 @@
 
 ;;; Code:
 
-(when (< emacs-major-version 31)
-  (error (format "Emacs >= 31.0.50 required")))
+(when (version< emacs-version "31.1")
+  (error "Emacs >= 31.1 required"))
 
 ;; Disable weird overwrite-mode.
 (put 'overwrite-mode 'disabled t)
