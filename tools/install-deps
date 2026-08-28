@@ -13,6 +13,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
   brew install \
     claude-code \
     cmake \
+    cmake-language-server \
     enchant \
     hunspell \
     font-jetbrains-mono \
@@ -58,6 +59,7 @@ if [[ "${ID}" = fedora ]]; then
        wl-clipboard
 
   pipx install \
+       cmake-language-server \
        pyright
 
   go install \
@@ -84,6 +86,7 @@ if [[ "${ID}" = debian ]]; then
          wl-clipboard
 
     pipx install \
+         cmake-language-server \
          pyright \
          uv
 

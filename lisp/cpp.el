@@ -54,6 +54,12 @@ a different directory, unlike `ff-find-other-file'."
   (:map c++-ts-mode-map
         ("C-c o" . my/cpp-switch-source-header)))
 
+;; 📦 CMAKE-TS-MODE
+;; Tree-sitter integration for CMake.
+(use-package cmake-ts-mode
+  :hook
+  (cmake-ts-mode . eglot-ensure))
+
 
 (add-to-list 'auto-mode-alist '("/\\.clang-format\\'" . yaml-ts-mode))
 (add-to-list 'auto-mode-alist '("/\\.clang-tidy\\'" . yaml-ts-mode))
