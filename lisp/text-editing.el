@@ -19,16 +19,6 @@
   ;; Delete whole selected region by Del or Backspace.
   (delete-selection-mode t))
 
-;; 📦 ABBREV
-;; Abbreviations support.
-(use-package abbrev
-  :config
-  ;; Save abbrevs without questions.
-  (setopt save-abbrevs 'silently)
-
-  (setopt abbrev-mode t)
-  (add-to-list 'mode-line-collapse-minor-modes 'abbrev-mode))
-
 ;; 📦 SIMPLE
 ;; Miscellaneous text editor settings.
 (use-package simple
