@@ -28,8 +28,9 @@
   (:map completion-preview-active-mode-map
         ("M-n" . completion-preview-next-candidate)
         ("M-p" . completion-preview-prev-candidate)
-        ("M-<return>" . completion-preview-insert)
-        ("<tab>" . completion-preview-complete)))
+        ("M-i" . completion-preview-insert-word)
+        ("M-RET" . completion-preview-insert)
+        ("TAB" . completion-preview-complete)))
 
 (provide 'text-completion)
 ;;; text-completion.el ends here
