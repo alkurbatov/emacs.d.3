@@ -38,7 +38,8 @@ The third incarnation of my Emacs configuration.
 ├── early-init.el       # loaded before init.el, GUI/frame tweaks
 ├── init.el             # entry point, requires modules in lisp/ in load order
 │
-├── CLAUDE.md
+├── AGENTS.md
+├── CLAUDE.md           # points to AGENTS.md
 ├── LICENSE
 ├── Makefile
 ├── package-lock.el     # locked package versions, updated via 'make copy-lock'

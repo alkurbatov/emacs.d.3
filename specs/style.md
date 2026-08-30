@@ -8,6 +8,7 @@ Coding conventions for `lisp/*.el` modules.
 - Docstrings: the first line must be a complete, self-contained sentence
   — some commands (e.g. `apropos`) display only the first line.
 
-## Specs
+## Markdown
 
-- `specs/*.md` files must pass the `mdl` linter (run `mdl specs/`).
+- All Markdown in the repository, not just `specs/`, must pass the
+  `markdownlint` pre-commit hook (run `mdl .` locally).
