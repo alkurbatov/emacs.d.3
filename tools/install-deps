@@ -24,6 +24,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     pipx \
     pkg-config \
     ripgrep \
+    shellcheck \
     uv
 
   brew install --cask mactex
@@ -54,6 +55,7 @@ if [[ "${ID}" = fedora ]]; then
        pipx \
        pkgconf-pkg-config \
        ripgrep \
+       shellcheck \
        util-linux \
        uv \
        wl-clipboard
@@ -83,6 +85,7 @@ if [[ "${ID}" = debian ]]; then
          libvterm-dev \
          pipx \
          ripgrep \
+         shellcheck \
          wl-clipboard
 
     pipx install \
