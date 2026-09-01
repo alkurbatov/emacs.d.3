@@ -38,6 +38,9 @@ If target environment is not a project, 'root' link type is not declared."
   ;; Enable syntax highlighting in src blocks for certain languages.
   (add-to-list 'org-src-lang-modes '("proto" . protobuf-ts))
 
+  ;; Keep src block contents as typed, otherwise Org re-indents the whole block.
+  (setopt org-src-preserve-indentation t)
+
   ;; Path to task files.
   (setopt org-agenda-files
           (list my/second-brain-directory
