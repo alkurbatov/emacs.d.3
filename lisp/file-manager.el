@@ -65,6 +65,9 @@
   ;; Use short flags compatible with ls-lisp (no GNU-specific long options).
   (setopt dired-listing-switches "-AlGgh")
 
+  ;; When doing search with C-s in Dired buffers, match only file/folder names.
+  (setopt dired-isearch-filenames t)
+
   (modus-themes-with-colors
    (set-face-attribute 'dired-directory nil :weight 'bold))
 
