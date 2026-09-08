@@ -4,13 +4,21 @@
 
 ;;; Code:
 
-(defun my/pulse-current-region (&rest _)
-  "Pulse the current implicit or active region."
-  (if mark-active
-      (pulse-momentary-highlight-region (region-beginning) (region-end))
-    (pulse-momentary-highlight-region (mark) (point))))
+;; 📦 PULSAR
+;; Emacs package to pulse the current line after running select functions.
+(use-package pulsar
+  :straight t
 
-(advice-add #'kill-ring-save :before #'my/pulse-current-region)
+  :config
+  (setopt pulsar-delay 0.055
+          pulsar-iterations 5
+          pulsar-tty-color 'pulsar-yellow
+          pulsar-face 'pulsar-green
+          pulsar-region-face 'pulsar-yellow
+          pulsar-highlight-face 'pulsar-magenta)
+
+  :hook
+  (after-init . pulsar-global-mode))
 
 ;; 📦 DELSEL
 ;; Controls work with selected regions.
