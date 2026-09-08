@@ -71,6 +71,12 @@
   ;; Never time out Eglot connection to make things faster.
   (setopt eglot-connect-timeout nil)
 
+  ;; Don't report any progress (slightly speeds up).
+  (setopt eglot-report-progress nil)
+
+  ;; Disable automatic code action indicators to reduce background polling.
+  (setopt eglot-code-action-indications nil)
+
   ;; Specify explicitly to use Orderless for Eglot.
   (setopt completion-category-overrides '((eglot (styles orderless))
                                           (eglot-capf (styles orderless))))
@@ -85,6 +91,12 @@
   ;; To avoid cases when Eglot hides real reason behind weird localized
   ;; messages, e.g. "Attempt to store non-ASCII char into multibyte string".
   (setopt system-messages-locale "C")
+
+  ;; Don't request code formatting using LSP, we use apheleia instead.
+  (add-to-list 'eglot-ignored-server-capabilities :documentOnTypeFormattingProvider)
+
+  ;; Don't highlight other occurrences of a symbol under cursor.
+  (add-to-list 'eglot-ignored-server-capabilities :documentHighlightProvider)
 
   :bind
   (:map eglot-mode-map
