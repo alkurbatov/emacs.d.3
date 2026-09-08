@@ -56,6 +56,9 @@
   ;; Always do recursive copies without questions.
   (setopt dired-recursive-copies 'always)
 
+  ;; Ask when copy operation needs to create new folders.
+  (setopt dired-create-destination-dirs 'ask)
+
   ;; Remove folders recursively without questions.
   (setopt dired-recursive-deletes 'always)
 
@@ -67,6 +70,17 @@
 
   ;; When doing search with C-s in Dired buffers, match only file/folder names.
   (setopt dired-isearch-filenames t)
+
+  ;; Rename file using version control system if current folder is under
+  ;; it's control.
+  (setopt dired-vc-rename-file t)
+
+  ;; Silently close buffer which files were deleted.
+  (setopt dired-clean-confirm-killing-deleted-buffers nil)
+
+  ;; Restrict cursor's vertical movement to file lines in the Dired buffer
+  ;; instead of moving to other non-file lines.
+  (setopt dired-movement-style 'bounded-files)
 
   (modus-themes-with-colors
    (set-face-attribute 'dired-directory nil :weight 'bold))

@@ -24,7 +24,7 @@
 
   ;; Auto refresh Dired, but be quiet about it.
   (setopt global-auto-revert-non-file-buffers t
-          dired-auto-revert-buffer t
+          dired-auto-revert-buffer 'dired-directory-changed-p
           auto-revert-verbose nil)
 
   (add-to-list 'mode-line-collapse-minor-modes 'auto-revert-mode)
