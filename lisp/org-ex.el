@@ -99,7 +99,7 @@ by `my/set-project-root-abbrev'."
   (("C-c a" . org-agenda)
    (:map org-mode-map
          ("C-c z" . org-toggle-link-display)
-         ("C-c i" . nano-org-time-stamp-inactive))))
+         ("C-c i" . my/org-time-stamp-inactive))))
 
 
 (provide 'org-ex)
