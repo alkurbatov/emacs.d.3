@@ -11,14 +11,49 @@
   (org-insert-time-stamp (current-time) nil t))
 
 
+(defvar-local my/project-root nil
+  "Root of the project owning the current buffer, nil outside a project.")
+
+
 (defun my/set-project-root-abbrev ()
   "Add special link type 'root' to use in links to files, e.g. root:/a/b/c.
 Such links are always use project root as the base path.
 If target environment is not a project, 'root' link type is not declared."
   (when-let* ((project (project-current))
               (root (project-root project)))
+    (setq-local my/project-root root)
     (setq-local org-link-abbrev-alist
                 `(("root" . ,(concat "file:" root))))))
+
+
+(defun my/org-file-path-capf ()
+  "Complete file paths typed after a `file:' or `root:' link prefix.
+Paths after `root:' are completed relative to the project root declared
+by `my/set-project-root-abbrev'."
+  (when (looking-back "\\_<\\(file\\|root\\):\\([^][ \t\n]*\\)"
+                      (line-beginning-position))
+    (let ((type (match-string-no-properties 1))
+          (beg (match-beginning 2))
+          (end (point)))
+      (when-let* ((dir (if (equal type "file")
+                           default-directory
+                         my/project-root)))
+        (list beg end
+              (lambda (string pred action)
+                (let ((default-directory dir))
+                  (completion-file-name-table string pred action)))
+              :exclusive 'no)))))
+
+(defun my/org-setup-completion ()
+  "Setup completion at point functions."
+
+  ;; Drop `ispell-completion-at-point', inherited from `text-mode'.  It
+  ;; runs last, so it fires on every ordinary word no other capf claims,
+  ;; filling `completion-preview' with dictionary noise.
+  (remove-hook 'completion-at-point-functions #'ispell-completion-at-point t)
+
+  ;; Enable file path completion in the current Org buffer.
+  (add-hook 'completion-at-point-functions #'my/org-file-path-capf nil t))
 
 
 ;; 📦 ORG
@@ -57,7 +92,8 @@ If target environment is not a project, 'root' link type is not declared."
   :hook
   ((org-mode . visual-line-mode)
    (org-mode . emojify-mode)
-   (org-mode . my/set-project-root-abbrev))
+   (org-mode . my/set-project-root-abbrev)
+   (org-mode . my/org-setup-completion))
 
   :bind
   (("C-c a" . org-agenda)
