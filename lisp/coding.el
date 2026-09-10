@@ -78,8 +78,8 @@
   (setopt eglot-code-action-indications nil)
 
   ;; Specify explicitly to use Orderless for Eglot.
-  (setopt completion-category-overrides '((eglot (styles orderless))
-                                          (eglot-capf (styles orderless))))
+  (add-to-list 'completion-category-overrides '(eglot (styles orderless)))
+  (add-to-list 'completion-category-overrides '(eglot-capf (styles orderless)))
 
   ;; Increase chunk size to make Eglot faster.
   (setopt read-process-output-max (* 4 1024 1024)) ; 4096kb
