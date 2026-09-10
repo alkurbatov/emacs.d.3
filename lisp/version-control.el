@@ -41,13 +41,13 @@
   (modus-themes-with-colors
    (set-face-attribute 'diff-hl-margin-insert nil
                        :foreground green-cooler
-                       :background bg-main)
+                       :background bg-dim)
    (set-face-attribute 'diff-hl-margin-change nil
                        :foreground yellow-cooler
-                       :background bg-main)
+                       :background bg-dim)
    (set-face-attribute 'diff-hl-margin-delete nil
                        :foreground red-cooler
-                       :background bg-main))
+                       :background bg-dim))
 
   :hook
   (after-init . global-diff-hl-mode))

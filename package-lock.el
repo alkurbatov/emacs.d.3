@@ -6,7 +6,6 @@
  ("dash.el" . "d3a84021dbe48dba63b52ef7665651e0cf02e915")
  ("diff-hl" . "b965e19e6e7f9933199e421849a49229207c1c9f")
  ("drag-stuff.el" . "6d06d846cd37c052d79acd0f372c13006aa7e7c8")
- ("ef-themes" . "497321e5f563fc0a1d8cbbc88ee53b9984b930c1")
  ("el-get" . "447b7efc9fca29a087f4ec29c5d8ccb580cd1c78")
  ("elfeed" . "e18cbb8cc4bb08e1512571449623f5f03f43f94c")
  ("elfeed-org" . "34c0b4d758942822e01a5dbe66b236e49a960583")

@@ -7,20 +7,18 @@
 
 ;; 📦 EF-THEMES
 ;; Nice-looking themes from Protesilaos Stavrou.
-(use-package ef-themes
+(use-package modus-themes
   :straight t
-
-  :init
-  (ef-themes-take-over-modus-themes-mode 1)
 
   :config
   ;; Assume that all themes are safe.
   (setopt custom-safe-themes t)
 
-  ;; All customizations here.
+  ;; Render spacing-sensitive elements, such as Org tables and code blocks,
+  ;; in a monospaced font.
   (setopt modus-themes-mixed-fonts t)
 
-  (modus-themes-load-theme 'ef-maris-dark))
+  (modus-themes-load-theme 'modus-operandi))
 
 ;; 📦 DISPLAY-LINE-NUMBERS-MODE
 ;; Show line numbers.
