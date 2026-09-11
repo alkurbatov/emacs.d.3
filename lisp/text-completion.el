@@ -1,6 +1,8 @@
 ;;; text-completion.el --- Completion in text editor. -*- lexical-binding: t; -*-
 
 ;;; Commentary:
+;; See
+;; https://protesilaos.com/codelog/2026-07-29-emacs-default-minibuffer-completion-overview/
 
 ;;; Code:
 
@@ -35,6 +37,9 @@
 
   ;; Rely on previous inputs to surface candidates towards the top of the list.
   (setopt completions-sort 'historical)
+
+  ;; Show the Completions buffer if I hit TAB but there is no unique match yet.
+  (setopt completion-auto-help t)
 
   ;; Never switch to the Completions buffer when I type TAB, because I
   ;; want to select candidates while the minibuffer is still in focus,
