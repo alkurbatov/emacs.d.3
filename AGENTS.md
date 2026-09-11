@@ -12,6 +12,8 @@
   name the concrete problem, propose the alternative. Do not soften a
   finding, do not invent objections.
 - Minimal diff: do not refactor unrelated code.
+- After every change both `make test` and `pre-commit run --all-files`
+  must pass. Run them yourself, do not hand the work over untested.
 - Numbers, paths, versions, env variable names, commands, dependencies
   and routes come from the repository, never invented.
 - Do not read or commit `.env`, tokens or secrets.
@@ -27,8 +29,8 @@
   required from `init.el` in load order.
 - `site-lisp/` — standalone projects kept apart from the configuration
   code, one directory per project, installed from `init.el` with
-  `use-package` + `:load-path`. A project keeps its tests and its
-  `spec.md` next to its code.
+  `use-package` + `:load-path`. A project keeps its `spec.md` next to its
+  code.
 - `snippets/` — yasnippet templates.
 - `specs/` — design specs for non-trivial features, except those of
   `site-lisp/` projects.
@@ -46,10 +48,4 @@ before implementing anything non-trivial.
 ## Style and testing
 
 Conventions: [specs/style.md](specs/style.md) and
-[specs/unit-testing.md](specs/unit-testing.md). Run the suite with
-`make test`.
-
-Every change must pass `pre-commit run --all-files`: markdownlint,
-`elisp-indent`, `elisp-check-parens`, shellcheck, and the whitespace and
-end-of-file fixers. The test suite is not one of the hooks — run it
-separately.
+[specs/unit-testing.md](specs/unit-testing.md).

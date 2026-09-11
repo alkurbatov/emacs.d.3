@@ -14,6 +14,7 @@ repos:
     rev: v0.18.0
     hooks:
       - id: markdownlint
+        exclude: ^CLAUDE\.md$
 
   - repo: https://github.com/jamescherti/pre-commit-elisp
     rev: v1.0.9

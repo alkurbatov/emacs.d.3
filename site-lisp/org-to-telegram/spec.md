@@ -1,8 +1,7 @@
 # org-to-telegram
 
 Converts the current org buffer into a Telegram-ready post and shows the
-result in a new buffer for manual copying. No sending, no clipboard
-integration, no escaping in this version.
+result in a new buffer for manual copying.
 
 ## Module
 
@@ -12,8 +11,8 @@ integration, no escaping in this version.
 
 Only one function, interactive, no separate reusable string-conversion API:
 
-- `my/org-to-telegram-buffer` — operates on the whole current buffer (no
-  region support). Shows the converted post in a new buffer
+- `my/org-to-telegram-buffer` — operates on the whole current buffer.
+  Shows the converted post in a new buffer
   (`*Telegram Post*`, `text-mode`, read-only) for the user to read/copy
   from manually.
 
@@ -37,9 +36,7 @@ emphasis markers but not `[text](url)`, so a link pasted there stays
 literal text. That is accepted: the post is composed on the desktop.
 
 Any marker added later (italic, spoiler, code) must come from the same
-client flavour. Switching the whole output to Bot API MarkdownV2 is a
-different decision, and would mean revisiting every rule below plus
-escaping — see "Explicitly out of scope".
+client flavour.
 
 ## Approach
 
@@ -75,8 +72,7 @@ rewrite.
    replaced by `•`. Wrapped continuation text belonging to the same item
    stays part of that item's rendered line, with the same line-joining
    as paragraphs (including stripping the continuation line's source
-   indentation). Only single-level (plain) lists are supported — see
-   "Explicitly out of scope" below.
+   indentation). Nested lists are out of scope — see below.
 1. **Links** (`link` objects): rendered as `[description](url)` when the
    link has description content (arbitrary nested text, including literal
    brackets — the AST already isolates it, no bracket-matching needed),
@@ -105,9 +101,8 @@ rewrite.
   `**`, `~~`, `` ` `` or `[` in the source text is emitted as is).
 - Bot API output — neither the `MarkdownV2` flavour nor its escaping
   rules; see "Target markup".
-- Emphasis conversion other than strikethrough (bold/italic/underline/
-  verbatim).
-- `#+BEGIN_SRC` / `#+BEGIN_QUOTE` blocks.
+- Every element left to rule 9: emphasis other than strikethrough,
+  `#+BEGIN_SRC` / `#+BEGIN_QUOTE` blocks.
 - TODO keywords, priorities, tags on headlines.
 - Sending the post anywhere (Bot API, clipboard, etc.) — output is a
   buffer only.

@@ -33,20 +33,18 @@ Conventions for writing and running unit tests for `lisp/*.el` modules.
 
 ## Running tests
 
+The whole suite:
+
 ```bash
 make test
 ```
 
-The root target delegates to each `site-lisp/` project's own `test`
-target, so a project's suite can also be run on its own:
+A single `site-lisp/` project:
 
 ```bash
 make -C site-lisp/org-to-telegram test
 ```
 
-Every target runs its test files in a single batch `emacs` invocation via
-`ert-run-tests-batch-and-exit`. There are currently no `lisp/*-test.el`
-files; adding one means giving the root `test` target its own `emacs`
-invocation again.
-
-The suite is not part of the pre-commit hooks — run it separately.
+The root target delegates to each `site-lisp/` project's own `test`
+target; a project target runs its test files in a single batch `emacs`
+invocation via `ert-run-tests-batch-and-exit`.
