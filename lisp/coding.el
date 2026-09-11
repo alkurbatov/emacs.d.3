@@ -98,6 +98,10 @@
   ;; Don't highlight other occurrences of a symbol under cursor.
   (add-to-list 'eglot-ignored-server-capabilities :documentHighlightProvider)
 
+  ;; Render LSP documentation with the built-in Markdown mode,
+  ;; otherwise Eglot falls back to plain text.
+  (setopt eglot-documentation-renderer #'markdown-ts-view-mode)
+
   :bind
   (:map eglot-mode-map
         ("M-," . xref-go-back)

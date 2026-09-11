@@ -28,7 +28,6 @@
  ("llama" . "d430d48e0b5afd2a34b5531f103dcb110c3539c4")
  ("magit" . "073b01e83405031da1ed55b45cb6b649a3cfb228")
  ("marginalia" . "51a79bb82355d0ce0ee677151f041a3aba8cbfca")
- ("markdown-mode" . "182640f79c3ed66f82f0419f130dffc173ee9464")
  ("melpa" . "0a71915fff01c8de0b0accc9a787d64cc1b588f1")
  ("modus-themes" . "d7e30694cb8a39fdb2e9eedf17b2a546f55ce3be")
  ("nongnu-elpa" . "2e12d173f9e329f1a37c07a4a84fdbaaff12d245")

@@ -7,13 +7,15 @@
 ;; 📦 MARKDOWN-TS-MODE
 ;; Tree-sitter integration for Markdown.
 (use-package markdown-ts-mode
+  :mode
+  ("\\.markdown\\'" . markdown-ts-mode)
+  ("\\.md\\'" . markdown-ts-mode)
+
+  ;; Used by Eglot to render LSP documentation, see lisp/coding.el.
+  :commands (markdown-ts-view-mode)
+
   :hook
   ((markdown-ts-mode . visual-line-mode)))
-
-;; 📦 MARKDOWN-MODE
-;; Emacs Markdown Mode.
-(use-package markdown-mode
-  :straight t)
 
 (provide 'markdown)
 ;;; markdown.el ends here
