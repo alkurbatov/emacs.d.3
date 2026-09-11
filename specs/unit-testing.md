@@ -9,7 +9,9 @@ Conventions for writing and running unit tests for `lisp/*.el` modules.
 ## Layout
 
 - One test file per module, colocated in `lisp/`:
-  `lisp/module-name.el` → `lisp/module-name-test.el`.
+  `lisp/module-name.el` → `lisp/module-name-test.el`. The same holds for
+  a `site-lisp/` project: its tests live in the project's own directory,
+  next to the project's own `Makefile`.
 - Test files are not `require`d from `init.el` or any other module — they
   are only loaded when running tests.
 - `(require 'module-name)` at the top of the test file.
@@ -35,6 +37,16 @@ Conventions for writing and running unit tests for `lisp/*.el` modules.
 make test
 ```
 
-This runs all `lisp/*-test.el` files in a single batch `emacs` invocation
-via `ert-run-tests-batch-and-exit`. The suite is not part of the
-pre-commit hooks — run it separately.
+The root target delegates to each `site-lisp/` project's own `test`
+target, so a project's suite can also be run on its own:
+
+```bash
+make -C site-lisp/org-to-telegram test
+```
+
+Every target runs its test files in a single batch `emacs` invocation via
+`ert-run-tests-batch-and-exit`. There are currently no `lisp/*-test.el`
+files; adding one means giving the root `test` target its own `emacs`
+invocation again.
+
+The suite is not part of the pre-commit hooks — run it separately.

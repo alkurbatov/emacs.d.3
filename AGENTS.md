@@ -25,8 +25,13 @@
 
 - `lisp/` — one module per feature/tool, `use-package` conventions,
   required from `init.el` in load order.
+- `site-lisp/` — standalone projects kept apart from the configuration
+  code, one directory per project, installed from `init.el` with
+  `use-package` + `:load-path`. A project keeps its tests and its
+  `spec.md` next to its code.
 - `snippets/` — yasnippet templates.
-- `specs/` — design specs for non-trivial features.
+- `specs/` — design specs for non-trivial features, except those of
+  `site-lisp/` projects.
 - `tools/install` — installs this configuration into the current system.
 - `tools/install-deps` — installs additional system dependencies.
 - `early-init.el` — loaded before `init.el`, GUI/frame tweaks.

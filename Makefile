@@ -18,4 +18,4 @@ copy-lock: ## Copy lock from ~/.emacs.d to the repo
 
 .PHONY: test
 test: ## Run unit tests
-	emacs -Q --batch -L lisp $(foreach f,$(wildcard lisp/*-test.el),-l $(f)) -f ert-run-tests-batch-and-exit
+	$(MAKE) -C site-lisp/org-to-telegram test

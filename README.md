@@ -27,6 +27,9 @@ The third incarnation of my Emacs configuration.
 ├── lisp                # one module per feature/tool, use-package conventions,
 │                       # required from init.el in load order
 │
+├── site-lisp           # standalone projects, one directory each, installed
+│                       # from init.el via use-package :load-path
+│
 ├── snippets            # yasnippet templates
 │
 ├── specs               # design specs for non-trivial features

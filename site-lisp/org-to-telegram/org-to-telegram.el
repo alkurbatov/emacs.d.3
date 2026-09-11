@@ -2,8 +2,8 @@
 
 ;;; Commentary:
 ;; Converts the current org buffer into a Telegram-ready post and shows the
-;; result in a new buffer for manual copying.  See specs/org-to-telegram.md
-;; for the conversion rules.
+;; result in a new buffer for manual copying.  See spec.md for the
+;; conversion rules.
 
 ;;; Code:
 

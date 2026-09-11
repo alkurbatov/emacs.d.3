@@ -92,7 +92,14 @@
 (when my/with-second-brain
   (require 'org-ex)
   (require 'second-brain)
-  (require 'org-to-telegram))
+
+  ;; 📦 ORG-TO-TELEGRAM
+  ;; Local project: converts the current org buffer into a Telegram post.
+  (use-package org-to-telegram
+    :load-path "site-lisp/org-to-telegram"
+
+    :commands
+    (my/org-to-telegram-buffer)))
 (when my/with-rss
   (require 'rss-reader))
 

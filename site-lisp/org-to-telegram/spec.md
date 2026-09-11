@@ -6,7 +6,7 @@ integration, no escaping in this version.
 
 ## Module
 
-`lisp/org-to-telegram.el`
+`site-lisp/org-to-telegram/org-to-telegram.el`
 
 ## Public API
 
