@@ -21,17 +21,30 @@ appearing as literal text, so it is reproduced here."
   (if (stringp node)
       node
     (concat
-     (if (eq (org-element-type node) 'link)
-         (org-to-telegram--render-link node)
-       (let ((contents (org-element-contents node)))
-         (if contents
-             (org-to-telegram--render contents)
-           (or (org-element-property :value node) ""))))
+     (pcase (org-element-type node)
+       ('link (org-to-telegram--render-link node))
+       ('strike-through
+        (org-to-telegram--strike-through
+         (org-to-telegram--render (org-element-contents node))))
+       (_ (let ((contents (org-element-contents node)))
+            (if contents
+                (org-to-telegram--render contents)
+              (or (org-element-property :value node) "")))))
      (make-string (or (org-element-property :post-blank node) 0) ?\s))))
 
 (defun org-to-telegram--render (nodes)
   "Render a list of org NODES (strings and/or elements/objects) as plain text."
   (mapconcat #'org-to-telegram--render-node nodes ""))
+
+(defun org-to-telegram--join-lines (text)
+  "Join TEXT's source line wraps into a single line.
+Org stores a fill-column-wrapped paragraph or list item as one string
+with a literal newline (plus, for a list item's continuation lines, its
+indentation) at each wrap point. Telegram does not fill text itself, so
+left alone this would render as several short lines; collapse each
+newline and any leading whitespace on the line after it into a single
+space instead."
+  (replace-regexp-in-string "\n[ \t]*" " " text))
 
 (defun org-to-telegram--item-indentation (item)
   "Return the source column ITEM's bullet starts at."
@@ -42,11 +55,16 @@ appearing as literal text, so it is reproduced here."
   "Render list ITEM as its source indentation, a bullet, and its own text."
   (format "%s• %s"
           (make-string (org-to-telegram--item-indentation item) ?\s)
-          (string-trim-right (org-to-telegram--render (org-element-contents item)))))
+          (string-trim-right
+           (org-to-telegram--join-lines (org-to-telegram--render (org-element-contents item))))))
 
 (defun org-to-telegram--bold (text)
   "Wrap TEXT in Telegram bold markers."
-  (format "*%s*" text))
+  (format "**%s**" text))
+
+(defun org-to-telegram--strike-through (text)
+  "Wrap TEXT in Telegram strike-through markers."
+  (format "~~%s~~" text))
 
 (defun org-to-telegram--render-title (keyword)
   "Render the value of the TITLE KEYWORD node, or nil if it isn't TITLE."
@@ -68,7 +86,8 @@ Returns nil when PARAGRAPH belongs to a list item, since
 `org-to-telegram--render-item' already renders it as part of that
 item's line."
   (unless (eq (org-element-type (org-element-parent paragraph)) 'item)
-    (string-trim-right (org-to-telegram--render (org-element-contents paragraph)))))
+    (string-trim-right
+     (org-to-telegram--join-lines (org-to-telegram--render (org-element-contents paragraph))))))
 
 (defun org-to-telegram--render-block (node)
   "Render NODE (a keyword, headline, item, or paragraph) as one post line.

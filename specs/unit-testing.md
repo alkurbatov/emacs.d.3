@@ -36,5 +36,5 @@ make test
 ```
 
 This runs all `lisp/*-test.el` files in a single batch `emacs` invocation
-via `ert-run-tests-batch-and-exit`, so tests are one command and can be
-wired into the existing pre-commit hooks.
+via `ert-run-tests-batch-and-exit`. The suite is not part of the
+pre-commit hooks — run it separately.

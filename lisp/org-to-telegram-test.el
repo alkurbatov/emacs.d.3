@@ -56,10 +56,10 @@ Some text right after headline.
 
 * Headline two
 ")
-           "*Headline one*
+           "**Headline one**
 Some text right after headline.
 
-*Headline two*")))
+**Headline two**")))
 
 (ert-deftest org-to-telegram-test/skipped-keyword-blank-line-is-not-lost ()
   "A skipped non-TITLE keyword does not lose its trailing blank line.
@@ -71,7 +71,7 @@ That blank line still separates the surrounding blocks."
 
 Body paragraph.
 ")
-           "*My Title*
+           "**My Title**
 
 Body paragraph.")))
 
@@ -89,7 +89,7 @@ its last item, so this needs its own check."
            "• item one
 • item two
 
-*Next headline*")))
+**Next headline**")))
 
 (ert-deftest org-to-telegram-test/headline-pre-blank-is-preserved ()
   "A blank line between a headline and its first child is preserved."
@@ -99,7 +99,7 @@ its last item, so this needs its own check."
 
 Body text.
 ")
-           "*Headline*
+           "**Headline**
 
 Body text.")))
 
@@ -110,7 +110,7 @@ Body text.")))
             "* Headline
 Body text.
 ")
-           "*Headline*
+           "**Headline**
 Body text.")))
 
 (ert-deftest org-to-telegram-test/real-headline-renders-only-title ()
@@ -123,7 +123,55 @@ Body text.")))
 #+title: Грустные ИИнсайты
 #+filetags: :tgpost:
 ")
-           "*Грустные ИИнсайты*")))
+           "**Грустные ИИнсайты**")))
+
+(ert-deftest org-to-telegram-test/wrapped-paragraph-lines-are-joined ()
+  "A paragraph wrapped across several source lines renders as one line.
+Telegram does not fill text itself, so the fill-column wrap in the
+source must not become short lines in the post."
+  (should (string-equal
+           (org-to-telegram-test--convert
+            "This is line one of a wrapped
+paragraph that continues here.
+")
+           "This is line one of a wrapped paragraph that continues here.")))
+
+(ert-deftest org-to-telegram-test/wrapped-item-lines-are-joined ()
+  "A list item's continuation lines render as part of the same line.
+The continuation line's source indentation must not leak into the
+joined text either."
+  (should (string-equal
+           (org-to-telegram-test--convert
+            "- item one continues
+  onto a second line
+- item two
+")
+           "• item one continues onto a second line
+• item two")))
+
+(ert-deftest org-to-telegram-test/strike-through-is-converted ()
+  "Org's +text+ becomes the client's ~~text~~ inside a paragraph."
+  (should (string-equal
+           (org-to-telegram-test--convert
+            "skills.sh — +помойка+ перечень скилов.
+")
+           "skills.sh — ~~помойка~~ перечень скилов.")))
+
+(ert-deftest org-to-telegram-test/strike-through-renders-nested-objects ()
+  "A link inside a strike-through is rendered, not flattened to its raw text."
+  (should (string-equal
+           (org-to-telegram-test--convert
+            "Text +with [[https://example.com][a link]] inside+ and more.
+")
+           "Text ~~with [a link](https://example.com) inside~~ and more.")))
+
+(ert-deftest org-to-telegram-test/strike-through-in-item-is-converted ()
+  "Strike-through is converted inside a list item as well as in a paragraph."
+  (should (string-equal
+           (org-to-telegram-test--convert
+            "- item +one+
+")
+           "• item ~~one~~")))
 
 (provide 'org-to-telegram-test)
 ;;; org-to-telegram-test.el ends here
