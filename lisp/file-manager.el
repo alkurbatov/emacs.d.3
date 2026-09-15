@@ -82,6 +82,9 @@
   ;; instead of moving to other non-file lines.
   (setopt dired-movement-style 'bounded-files)
 
+  ;; Use neighbor dired buffer as default target (like in mc).
+  (setopt dired-dwim-target t)
+
   (modus-themes-with-colors
    (set-face-attribute 'dired-directory nil :weight 'bold))
 
