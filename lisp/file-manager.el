@@ -94,7 +94,8 @@
          ("3" . my/dired-sort-by-size)
          ("4" . my/dired-sort-by-date)
          ("5" . my/dired-sort-by-name)
-         ("6" . my/dired-sort-by-extension))))
+         ("6" . my/dired-sort-by-extension)
+         ("SPC" . dired-display-file))))
 
 
 (provide 'file-manager)
