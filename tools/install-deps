@@ -19,18 +19,16 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     font-jetbrains-mono \
     git \
     gopls \
-    libterm \
+    libvterm \
     llvm \
     pipx \
     pkg-config \
+    pyright \
     ripgrep \
     shellcheck \
     uv
 
   brew install --cask mactex
-
-  pipx install \
-       pyright
 
   exit 0
 fi
