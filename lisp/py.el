@@ -7,6 +7,10 @@
 ;; 📦 Python-TS-MODE
 ;; Tree-sitter integration for Python.
 (use-package python-ts-mode
+  :config
+  ;; Be quite about offset.
+  (setopt python-indent-guess-indent-offset-verbose nil)
+
   :hook
   ((python-ts-mode . eglot-ensure)))
 
