@@ -10,14 +10,18 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     --with-xwidgets \
     --formula
 
+  # NB (alkurbatov); Don't install hunspell as on macOS we use aspell instead
+  # due to lack of hunspell support in homebrew's enchant.
+
   brew install \
     claude-code \
     cmake \
     cmake-language-server \
     enchant \
-    hunspell \
+    ffmpeg \
     font-jetbrains-mono \
     git \
+    go \
     gopls \
     libvterm \
     llvm \
