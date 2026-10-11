@@ -42,6 +42,9 @@
   (setopt visible-bell nil
           ring-bell-function 'ignore)
 
+  ;; Disable annoying tmm-menubar.
+  (keymap-global-unset "M-`")
+
   :custom
   ;; Don't show boring messages.
   (inhibit-startup-echo-area-message (user-login-name))
