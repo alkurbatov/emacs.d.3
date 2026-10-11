@@ -9,7 +9,10 @@
   :straight t
 
   :config
-  (setopt jinx-languages "en_US ru_RU")
+  ;; Homebrew's enchant has no hunspell provider, so on macOS request
+  ;; aspell's "ru" instead of "ru_RU".  Put it first, as aspell's "en_US"
+  ;; suggests single letters for Cyrillic words.
+  (setopt jinx-languages (if (eq system-type 'darwin) "ru en_US" "en_US ru_RU"))
 
   (add-to-list 'mode-line-collapse-minor-modes 'jinx-mode)
 
