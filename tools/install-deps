@@ -2,6 +2,9 @@
 
 set -euxo pipefail
 
+# NB (alkurbatov): What is for:
+# mupdf-tools — to read PDFs in doc-view-mode.
+
 if [[ "${OSTYPE}" = darwin* ]]; then
   brew tap d12frosted/emacs-plus
   brew trust --formula d12frosted/emacs-plus/emacs-plus@31
@@ -25,6 +28,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     gopls \
     libvterm \
     llvm \
+    mupdf-tools \
     pipx \
     pkg-config \
     pyright \
