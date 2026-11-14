@@ -105,6 +105,7 @@
     (my/org-to-telegram-buffer)))
 (when my/with-rss
   (require 'rss-reader))
+(require 'pdf-reader)
 
 (provide 'init.el)
 ;;; init.el ends here

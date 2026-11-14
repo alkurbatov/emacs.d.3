@@ -17,7 +17,8 @@ if [[ "${OSTYPE}" = darwin* ]]; then
   # due to lack of hunspell support in homebrew's enchant.
 
   brew install \
-    claude-code \
+    autoconf \
+    automake \
     cmake \
     cmake-language-server \
     enchant \
@@ -29,6 +30,7 @@ if [[ "${OSTYPE}" = darwin* ]]; then
     libvterm \
     llvm \
     mupdf-tools \
+    poppler \
     pipx \
     pkg-config \
     pyright \
