@@ -91,6 +91,7 @@
   :bind
   (("C-x d" . dired-jump)
    (:map dired-mode-map
+         ("C-x w" . wdired-change-to-wdired-mode)
          ("3" . my/dired-sort-by-size)
          ("4" . my/dired-sort-by-date)
          ("5" . my/dired-sort-by-name)
