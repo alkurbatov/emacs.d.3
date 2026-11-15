@@ -70,8 +70,10 @@
   (pixel-scroll-mode t)
   (pixel-scroll-precision-mode)
 
-  (setopt scroll-margin 3
-          mouse-wheel-progressive-speed nil
+  ;; scroll-margin > 0 conflicts with pixel-scroll and cause back jumps during
+  ;; scrolling. Very inconvenient.
+  (setopt scroll-margin 0)
+  (setopt mouse-wheel-progressive-speed nil
           pixel-scroll-precision-interpolate-page t
           pixel-scroll-precision-large-scroll-height 1))
 
