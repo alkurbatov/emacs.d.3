@@ -1,4 +1,4 @@
-DEFAULT_GOAL := help
+.DEFAULT_GOAL := test
 
 .PHONY: help
 help: ## Display this help screen
